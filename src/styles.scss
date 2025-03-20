@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+.component-gral{
+    background-color: hsl(1deg, 1%, 6%);
+    border: 1px solid hsl(1deg, 1%, 12%);
+    border-radius: 0.5rem;
+    box-shadow: 0 0 1rem hsl(1deg, 1%, 12%);
+}
