@@ -66,14 +66,12 @@ main {
     align-items: center;
     padding: 1rem;
     box-sizing: inherit;
-    position: relative;
     background-color: hsl(1deg, 1%, 0%);
 }
 
 .content {
     display: grid;
-    height: calc(100svh - 5rem);
-    grid-template-rows: 50px 1fr;
+    grid-template-rows: auto 1fr;
     max-width: 1200px;
     width: 100%;
     padding: 1rem;
@@ -83,26 +81,22 @@ main {
     border-radius: 0.5rem;
     box-shadow: 0 0 1rem hsl(1deg, 1%, 12%);
     margin: var(--margin-1);
-    & h1 {
-        margin-top: 1.75rem;
-    }
-    p {
-        margin-top: 1.5rem;
-    }
 }
 
 .main-content {
     display: grid;
     height: calc(100% - 2rem);
     grid-template-columns: 200px 1fr;
-    grid-template-rows: 1fr;
     margin: var(--margin-1);
     background-color: hsl(1deg, 1%, 8%);
     border: 1px solid hsl(1deg, 1%, 12%);
     border-radius: 0.5rem;
     box-shadow: 0 0 1rem hsl(1deg, 1%, 12%);
     padding: 1rem;
+    gap: 1rem;
 }
+
+
 
 // @media screen and (max-width: 650px) {
 
