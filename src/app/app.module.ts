@@ -6,17 +6,20 @@ import { AppComponent } from './app.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { StudentsComponent } from './students/students.component';
+import { DirectivesComponent } from './directives/directives.component';
+// import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
     NavbarComponent,
-    StudentsComponent
+    StudentsComponent,
+    DirectivesComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
