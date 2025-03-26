@@ -1,7 +1,5 @@
 .students-info{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 220px);
     gap: 1rem;
     padding: 1rem;
     background-color: hsl(1deg, 1%, 6%);
@@ -9,15 +7,19 @@
     border-radius: 1rem;
     margin: 0;
     & li{
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        display: grid;
+        grid-template-columns: 30px repeat(2,1fr) 30px;
         width: 100%;
-        height: 100%;
         background-color: hsl(1deg, 1%, 8%);
         border: 1px solid hsl(1deg, 1%, 12%);
         border-radius: 0.5rem;
         box-shadow: 0 0 1rem hsl(1deg, 1%, 0%);
+        padding: 1rem;
+        gap: 1rem;
+        align-items: center;
+        & *{
+            vertical-align: middle;
+        }
         &:hover{
             box-shadow: 0 0 1rem hsl(1deg, 1%, 12%);
         }

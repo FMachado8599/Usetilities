@@ -1,14 +1,18 @@
 <h1>This is the Main Students Content</h1>
-<p>students works!</p>
 <div>
   <ul class="students-info">
-    <li>Student</li>
-    <li>Student</li>
-    <li>Student</li>
-    <li>Student</li>
-    <li>Student</li>
-    <li>Student</li>
-    <li>Student</li>
-    <li>Student</li>
+    <li *ngFor="let student of students">
+      <img src="" alt="student image" />
+      <div style="display: flex; flex-direction: row; gap: 0.7rem">
+        <h3 class="student-name">{{ student.name }}</h3>
+        <h3 class="student-name">{{ student.lastName }}</h3>
+      </div>
+      <p class="student-career">
+        @if(student.careers){
+        {{ student.careers }}
+        } @else{ N/A }
+      </p>
+      <img class="student-edit" src="" alt="Edit" />
+    </li>
   </ul>
 </div>

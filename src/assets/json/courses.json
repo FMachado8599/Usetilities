@@ -1,0 +1,39 @@
+[
+    {
+      "id": 1,
+      "name": "Mathematics",
+      "field": "Science",
+      "career": 1,
+      "about": "Covers algebra, calculus, and differential equations.",
+      "program": "Semester-based learning with weekly exams.",
+      "schedules": ["Monday 10:00-12:00", "Wednesday 14:00-16:00"]
+    },
+    {
+      "id": 2,
+      "name": "Physics",
+      "field": "Science",
+      "career": 1,
+      "about": "Focuses on mechanics, electromagnetism, and thermodynamics.",
+      "program": "Lab-oriented learning with projects.",
+      "schedules": ["Tuesday 08:00-10:00", "Thursday 14:00-16:00"]
+    },
+    {
+      "id": 3,
+      "name": "History",
+      "field": "Humanities",
+      "career": 2,
+      "about": "Explores ancient and modern civilizations.",
+      "program": "Project-based learning with research papers.",
+      "schedules": ["Tuesday 09:00-11:00", "Thursday 13:00-15:00"]
+    },
+    {
+      "id": 4,
+      "name": "Literature",
+      "field": "Humanities",
+      "career": 2,
+      "about": "Analyzes classic and contemporary literature.",
+      "program": "Discussion-based learning with essays.",
+      "schedules": ["Monday 14:00-16:00", "Wednesday 10:00-12:00"]
+    }
+  ]
+  

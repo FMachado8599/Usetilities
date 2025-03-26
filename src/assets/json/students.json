@@ -1,14 +1,4 @@
-import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-students',
-  standalone: false,
-  templateUrl: './students.component.html',
-  styleUrl: './students.component.scss'
-})
-export class StudentsComponent {
-
-  students = [
+[
     {
       "ci": "12345678",
       "avatar": "https://example.com/avatar1.jpg",
@@ -20,7 +10,7 @@ export class StudentsComponent {
       "courses": [1, 2],
       "careers": [1],
       "nationality": "American",
-      "birth": 22,
+      "age": 22,
       "bio": "A passionate student focused on engineering and scientific research."
     },
     {
@@ -34,11 +24,8 @@ export class StudentsComponent {
       "courses": [3, 4],
       "careers": [2],
       "nationality": "Spanish",
-      "birth": 21,
+      "age": 21,
       "bio": "Lover of books and historical research, aiming for a career in education."
     }
-  ];
-
-  constructor() { };
-
-}
+  ]
+  
