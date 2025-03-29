@@ -1,27 +1,47 @@
-.students-info{
-    display: grid;
-    gap: 1rem;
-    padding: 1rem;
-    background-color: hsl(1deg, 1%, 6%);
-    list-style: none;
-    border-radius: 1rem;
-    margin: 0;
-    & li{
-        display: grid;
-        grid-template-columns: 30px repeat(2,1fr) 30px;
-        width: 100%;
-        background-color: hsl(1deg, 1%, 8%);
-        border: 1px solid hsl(1deg, 1%, 12%);
-        border-radius: 0.5rem;
-        box-shadow: 0 0 1rem hsl(1deg, 1%, 0%);
-        padding: 1rem;
-        gap: 1rem;
-        align-items: center;
-        & *{
-            vertical-align: middle;
+// .students-info{
+//     display: grid;
+//     gap: 1rem;
+//     padding: 1rem;
+//     background-color: hsl(1deg, 1%, 6%);
+//     list-style: none;
+//     border-radius: 1rem;
+//     margin: 0;
+//     & li{
+//         display: grid;
+//         grid-template-columns: 30px repeat(2,1fr) 30px;
+//         width: 100%;
+//         background-color: hsl(1deg, 1%, 8%);
+//         border: 1px solid hsl(1deg, 1%, 12%);
+//         border-radius: 0.5rem;
+//         box-shadow: 0 0 1rem hsl(1deg, 1%, 0%);
+//         padding: .5rem 1rem;
+//         gap: 1rem;
+//         align-items: center;
+//         & *{
+//             vertical-align: middle;
+//             max-height: 30px;
+//         }
+//         &:hover{
+//             box-shadow: 0 0 1rem hsl(1deg, 1%, 12%);
+//         }
+//     }
+// }
+
+.students-table {
+    & tbody{
+        & tr{
+            & th{
+                & div{
+                    & img{
+                        width: 24px;
+                        height: 24px;
+                        border-radius: 50%;
+                    }
+                }
+            }
         }
-        &:hover{
-            box-shadow: 0 0 1rem hsl(1deg, 1%, 12%);
-        }
+    }
+    & *{
+        background-color: hsl(1deg, 1%, 6%);
     }
 }

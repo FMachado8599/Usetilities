@@ -1,18 +1,50 @@
 <h1>This is the Main Students Content</h1>
-<div>
+<!-- <div>
   <ul class="students-info">
-    <li *ngFor="let student of students">
+    <li>
       <img src="" alt="student image" />
-      <div style="display: flex; flex-direction: row; gap: 0.7rem">
-        <h3 class="student-name">{{ student.name }}</h3>
-        <h3 class="student-name">{{ student.lastName }}</h3>
-      </div>
+      <div style="display: flex; flex-direction: row; gap: 0.7rem"></div>
       <p class="student-career">
         @if(student.careers){
         {{ student.careers }}
         } @else{ N/A }
       </p>
-      <img class="student-edit" src="" alt="Edit" />
     </li>
   </ul>
+</div> -->
+<div>
+  <table class="table table-dark students-table">
+    <thead>
+      <tr>
+        <th scope="col">Student</th>
+        <th scope="col">Career</th>
+        <th scope="col">Location</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let student of students">
+        <th scope="row">
+          <div class="d-flex flex-row gap-3">
+            <img src="public/assets/WebP/icon_avatar.webp" alt="Avatar" />
+            <div class="d-flex flex-row gap-1">
+              <p>{{ student.name }}</p>
+              <p>{{ student.lastName }}</p>
+            </div>
+          </div>
+        </th>
+        <td class="student-career">
+          <span *ngFor="let careerId of student.careers; let last = last">
+            {{ getCareerName(careerId) }}<span *ngIf="!last">, </span>
+          </span>
+        </td>
+        <td>
+          {{ student.location }}
+        </td>
+        <td>
+          <img class="student-edit" src="" alt="Edit" />
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
