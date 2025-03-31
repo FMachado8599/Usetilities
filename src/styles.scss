@@ -33,9 +33,18 @@ p {
 }
 
 .component-gral{
-    background-color: hsl(1deg, 1%, 6%);
+    background-color: hsl(1, 1%, 8%);
     border: 1px solid hsl(1deg, 1%, 12%);
     border-radius: 0.5rem;
     box-shadow: 0 0 1rem hsl(1deg, 1%, 12%);
+}
+.section-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    height: 100%;
+    gap: 1rem;
 }
 

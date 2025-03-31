@@ -33,6 +33,8 @@ interface Career{
 
 export class StudentsComponent {
 
+  avatarPlaceholder: string = "/assets/png/avatar_placeholder_white.png";
+
   public students: Student[] = [
     {
       "ci": 12345678,
@@ -61,6 +63,62 @@ export class StudentsComponent {
       "nationality": "Spanish",
       "birth": 21,
       "bio": "Lover of books and historical research, aiming for a career in education."
+    },
+    {
+      "ci": 11223344,
+      "avatar": "https://example.com/avatar3.jpg",
+      "name": "Liam",
+      "lastName": "Smith",
+      "location": "Toronto, Canada",
+      "score": 92,
+      "presenteeism": 97,
+      "courses": [2, 5],
+      "careers": [1, 3],
+      "nationality": "Canadian",
+      "birth": 23,
+      "bio": "Aspiring software engineer with a passion for AI and robotics."
+    },
+    {
+      "ci": 55667788,
+      "avatar": "https://example.com/avatar4.jpg",
+      "name": "Sophie",
+      "lastName": "Dubois",
+      "location": "Paris, France",
+      "score": 85,
+      "presenteeism": 92,
+      "courses": [3, 6],
+      "careers": [2],
+      "nationality": "French",
+      "birth": 20,
+      "bio": "Art and literature enthusiast, specializing in French and European history."
+    },
+    {
+      "ci": 99887766,
+      "avatar": "https://example.com/avatar5.jpg",
+      "name": "Carlos",
+      "lastName": "Fernández",
+      "location": "Buenos Aires, Argentina",
+      "score": 90,
+      "presenteeism": 94,
+      "courses": [1, 4],
+      "careers": [3],
+      "nationality": "Argentinian",
+      "birth": 24,
+      "bio": "Economics student passionate about finance and business development."
+    },
+    {
+      "ci": 33445566,
+      "avatar": "https://example.com/avatar6.jpg",
+      "name": "Emma",
+      "lastName": "Taylor",
+      "location": "Sydney, Australia",
+      "score": 87,
+      "presenteeism": 95,
+      "courses": [2, 5, 6],
+      "careers": [1, 2],
+      "nationality": "Australian",
+      "birth": 22,
+      "bio": "Dedicated environmental scientist working on sustainability projects."
     }
   ];
 
