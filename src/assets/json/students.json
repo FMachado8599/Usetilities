@@ -11,7 +11,8 @@
     "careers": [1],
     "nationality": "American",
     "age": 22,
-    "bio": "A passionate student focused on engineering and scientific research."
+    "bio": "A passionate student focused on engineering and scientific research.",
+    "online": true
   },
   {
     "ci": "87654321",
@@ -25,7 +26,8 @@
     "careers": [2],
     "nationality": "Spanish",
     "age": 21,
-    "bio": "Lover of books and historical research, aiming for a career in education."
+    "bio": "Lover of books and historical research, aiming for a career in education.",
+    "online": true
   },
   {
     "ci": "11223344",
@@ -39,7 +41,8 @@
     "careers": [1, 3],
     "nationality": "Canadian",
     "age": 23,
-    "bio": "Aspiring software engineer with a passion for AI and robotics."
+    "bio": "Aspiring software engineer with a passion for AI and robotics.",
+    "online": true
   },
   {
     "ci": "55667788",
@@ -53,7 +56,8 @@
     "careers": [2],
     "nationality": "French",
     "age": 20,
-    "bio": "Art and literature enthusiast, specializing in French and European history."
+    "bio": "Art and literature enthusiast, specializing in French and European history.",
+    "online": true
   },
   {
     "ci": "99887766",
@@ -67,7 +71,8 @@
     "careers": [3],
     "nationality": "Argentinian",
     "age": 24,
-    "bio": "Economics student passionate about finance and business development."
+    "bio": "Economics student passionate about finance and business development.",
+    "online": true
   },
   {
     "ci": "33445566",
@@ -81,7 +86,8 @@
     "careers": [1, 2],
     "nationality": "Australian",
     "age": 22,
-    "bio": "Dedicated environmental scientist working on sustainability projects."
+    "bio": "Dedicated environmental scientist working on sustainability projects.",
+    "online": true
   }
   ]
   

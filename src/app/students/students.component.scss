@@ -5,13 +5,6 @@
     height: 100%;
 }
 
-.main-component-title{
-    font-size: 3rem;
-    font-weight: 700;
-    color: hsl(1deg, 1%, 100%);
-    letter-spacing: .02rem;
-}
-
 .students-table {
     border-radius: .5rem;
     overflow:  hidden;
@@ -52,16 +45,32 @@
                 }
             }
             & td{
+                font-weight: 600;
                 padding: .8rem;
                 border-bottom: 2px solid hsl(1deg, 1%, 15%);
                 & .student-edit{
-                        fill: white ;
+                        fill: white;
                         width: 16px;
                         height: 16px;
                         cursor: pointer;
                 }
             }
+            & .student-online{
+                color: #10c210;
+            }
+            & .student-offline{
+                color: #ee0000;
+            }
         }
+    }
+    & .lowAttendance{
+        color: #ee0000;
+    }
+    & .highAttendance{
+        color: #10c210;
+    }
+    & .fullAttendance{
+        color: #f2c024;
     }
     & *{
         background-color: hsl(1deg, 1%, 6%);

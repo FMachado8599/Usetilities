@@ -13,6 +13,7 @@ interface Student {
   nationality:string;
   birth:number;
   bio:string;
+  online?:boolean;
 }
 
 interface Career{
@@ -42,13 +43,14 @@ export class StudentsComponent {
       "name": "John",
       "lastName": "Doe",
       "location": "New York, USA",
-      "score": 95,
+      "score": 100,
       "presenteeism": 98,
       "courses": [1, 2],
       "careers": [1],
       "nationality": "American",
       "birth": 22,
-      "bio": "A passionate student focused on engineering and scientific research."
+      "bio": "A passionate student focused on engineering and scientific research.",
+      "online": true
     },
     {
       "ci": 87654321,
@@ -62,7 +64,8 @@ export class StudentsComponent {
       "careers": [2],
       "nationality": "Spanish",
       "birth": 21,
-      "bio": "Lover of books and historical research, aiming for a career in education."
+      "bio": "Lover of books and historical research, aiming for a career in education.",
+      "online": false
     },
     {
       "ci": 11223344,
@@ -76,7 +79,8 @@ export class StudentsComponent {
       "careers": [1, 3],
       "nationality": "Canadian",
       "birth": 23,
-      "bio": "Aspiring software engineer with a passion for AI and robotics."
+      "bio": "Aspiring software engineer with a passion for AI and robotics.",
+      "online": true
     },
     {
       "ci": 55667788,
@@ -85,12 +89,13 @@ export class StudentsComponent {
       "lastName": "Dubois",
       "location": "Paris, France",
       "score": 85,
-      "presenteeism": 92,
+      "presenteeism": 82,
       "courses": [3, 6],
       "careers": [2],
       "nationality": "French",
       "birth": 20,
-      "bio": "Art and literature enthusiast, specializing in French and European history."
+      "bio": "Art and literature enthusiast, specializing in French and European history.",
+      "online": false
     },
     {
       "ci": 99887766,
@@ -104,7 +109,8 @@ export class StudentsComponent {
       "careers": [3],
       "nationality": "Argentinian",
       "birth": 24,
-      "bio": "Economics student passionate about finance and business development."
+      "bio": "Economics student passionate about finance and business development.",
+      "online": true
     },
     {
       "ci": 33445566,
@@ -118,7 +124,8 @@ export class StudentsComponent {
       "careers": [1, 2],
       "nationality": "Australian",
       "birth": 22,
-      "bio": "Dedicated environmental scientist working on sustainability projects."
+      "bio": "Dedicated environmental scientist working on sustainability projects.",
+      "online": true
     }
   ];
 

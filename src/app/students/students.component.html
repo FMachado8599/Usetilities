@@ -34,6 +34,14 @@
             <td>
               {{ student.location }}
             </td>
+            @if (student.online == true) {
+            <td class="student-online">Online</td>
+            } @else{
+            <td class="student-offline">Offline</td>
+            }
+            <td>
+              {{ student.presenteeism }}
+            </td>
             <td>
               <img
                 class="student-edit"

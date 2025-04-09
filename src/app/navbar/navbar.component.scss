@@ -1,9 +1,7 @@
 .navbar{
-    padding: 1rem;
+    padding: 1rem 0 1rem 1rem;
     border-radius: 0.5rem;
-    & h3{
-        margin: 0;
-    }
+    background-color: hsl(1deg, 1%, 4%);
     & .navbar-options{
         display: flex;
         flex-direction: column;
@@ -13,20 +11,47 @@
         padding: 0;
         width: 100%;
         gap: 1rem;
+        margin: 0;
         & li{
+            position: relative;
             font-size: small;
             font-weight: 700;
-            padding: 1rem 0;
+            padding: 1rem 0 1rem 1rem;
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             width: 100%;
-            background-color: hsl(1, 1%, 8%);
-            box-shadow: 0 2px .3rem hsl(1deg, 1%, 0%);
-            border-radius: .5rem;
-            border: 1px solid hsl(1deg, 1%, 10%);
+            gap: 1rem;
+            filter: drop-shadow(0 0 .3rem transparent);
+            border-radius: .5rem 0 0 .5rem;
+            cursor: pointer;
+            & img{
+                width: 24px;
+                height: 24px;
+                border-radius: 50%;
+            }
+            & h3{
+                margin: 0;
+                font-size: 1.2rem;
+                text-align: end;
+            }
             &:hover{
-                box-shadow: 0 0 .3rem hsl(1deg, 1%, 12%);
+                background:rgba(242, 24, 84, .1);
+                color: rgba(242, 24, 84, 1);
+                & img{
+                    & svg{
+                        fill: rgba(242, 24, 84, 1) !important;
+                    }
+                }
+            }
+            &:active{
+                background:rgba(242, 24, 84, .1);
+                color: rgba(242, 24, 84, 1);
+                & img{
+                    & svg{
+                        fill: rgba(242, 24, 84, 1) !important;
+                    }
+                }
             }
         }
     }
