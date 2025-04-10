@@ -44,7 +44,7 @@ export class StudentsComponent {
       "lastName": "Doe",
       "location": "New York, USA",
       "score": 100,
-      "presenteeism": 98,
+      "presenteeism": 100,
       "courses": [1, 2],
       "careers": [1],
       "nationality": "American",

@@ -55,23 +55,29 @@
                         cursor: pointer;
                 }
             }
+            & .student-presenteeism{
+                align-content: center;
+                text-align: center;
+            }
             & .student-online{
                 color: #10c210;
             }
             & .student-offline{
                 color: #ee0000;
             }
+            & .lowAttendance{
+                color: #ee0000;
+            }
+            & .highAttendance{
+                color: #10c210;
+            }
+            & .fullAttendance{
+                color: #f2c024;
+            }
+
         }
     }
-    & .lowAttendance{
-        color: #ee0000;
-    }
-    & .highAttendance{
-        color: #10c210;
-    }
-    & .fullAttendance{
-        color: #f2c024;
-    }
+
     & *{
         background-color: hsl(1deg, 1%, 6%);
     }

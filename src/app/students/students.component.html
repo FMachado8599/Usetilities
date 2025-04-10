@@ -8,7 +8,9 @@
             <th scope="col">Student</th>
             <th scope="col">Career</th>
             <th scope="col">Location</th>
-            <th scope="col"></th>
+            <th scope="col">Status</th>
+            <th scope="col">Attendance</th>
+            <th scope="col">Edit</th>
           </tr>
         </thead>
         <tbody>
@@ -39,7 +41,15 @@
             } @else{
             <td class="student-offline">Offline</td>
             }
-            <td>
+            <td
+              class="student-presenteeism"
+              [ngClass]="{
+                lowAttendance: student.presenteeism < 90,
+                highAttendance:
+                  student.presenteeism >= 90 && student.presenteeism < 100,
+                fullAttendance: student.presenteeism == 100
+              }"
+            >
               {{ student.presenteeism }}
             </td>
             <td>
