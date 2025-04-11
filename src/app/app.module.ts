@@ -7,7 +7,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { StudentsComponent } from './students/students.component';
 import { DirectivesComponent } from './directives/directives.component';
-// import { provideHttpClient } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormCreateStudentComponent } from './form-create-student/form-create-student.component';
 
 @NgModule({
   declarations: [
@@ -15,11 +16,14 @@ import { DirectivesComponent } from './directives/directives.component';
     ToolbarComponent,
     NavbarComponent,
     StudentsComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    FormCreateStudentComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

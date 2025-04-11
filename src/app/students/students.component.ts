@@ -10,8 +10,7 @@ interface Student {
   presenteeism:number;
   courses:number[];
   careers:number[];
-  nationality:string;
-  birth:number;
+  birth:Date;
   bio:string;
   online?:boolean;
 }
@@ -47,8 +46,7 @@ export class StudentsComponent {
       "presenteeism": 100,
       "courses": [1, 2],
       "careers": [1],
-      "nationality": "American",
-      "birth": 22,
+      "birth": new Date(2000, 0, 22), // 22 de enero de 2000
       "bio": "A passionate student focused on engineering and scientific research.",
       "online": true
     },
@@ -62,8 +60,7 @@ export class StudentsComponent {
       "presenteeism": 90,
       "courses": [3, 4],
       "careers": [2],
-      "nationality": "Spanish",
-      "birth": 21,
+      "birth": new Date(2000, 0, 21), // 21 de enero de 2000
       "bio": "Lover of books and historical research, aiming for a career in education.",
       "online": false
     },
@@ -77,8 +74,7 @@ export class StudentsComponent {
       "presenteeism": 97,
       "courses": [2, 5],
       "careers": [1, 3],
-      "nationality": "Canadian",
-      "birth": 23,
+      "birth": new Date(2000, 0, 23), // 23 de enero de 2000
       "bio": "Aspiring software engineer with a passion for AI and robotics.",
       "online": true
     },
@@ -92,8 +88,7 @@ export class StudentsComponent {
       "presenteeism": 82,
       "courses": [3, 6],
       "careers": [2],
-      "nationality": "French",
-      "birth": 20,
+      "birth": new Date(2000, 0, 20), // 20 de enero de 2000
       "bio": "Art and literature enthusiast, specializing in French and European history.",
       "online": false
     },
@@ -107,8 +102,7 @@ export class StudentsComponent {
       "presenteeism": 94,
       "courses": [1, 4],
       "careers": [3],
-      "nationality": "Argentinian",
-      "birth": 24,
+      "birth": new Date(2000, 0, 24), // 24 de enero de 2000
       "bio": "Economics student passionate about finance and business development.",
       "online": true
     },
@@ -122,8 +116,7 @@ export class StudentsComponent {
       "presenteeism": 95,
       "courses": [2, 5, 6],
       "careers": [1, 2],
-      "nationality": "Australian",
-      "birth": 22,
+      "birth": new Date(2000, 0, 22), // 22 de enero de 2000
       "bio": "Dedicated environmental scientist working on sustainability projects.",
       "online": true
     }
