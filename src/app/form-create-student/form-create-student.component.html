@@ -1,5 +1,5 @@
 <form
-  FormGroup="newStudentForm"
+  [formGroup]="newStudentForm"
   (ngSubmit)="submit()"
   class="form-create-student"
 >
@@ -37,3 +37,6 @@
   </div>
   <button type="submit">Create</button>
 </form>
+<div style="color: aliceblue">
+  {{ newStudentForm.value | json }}
+</div>
