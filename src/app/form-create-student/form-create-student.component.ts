@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-form-create-student',
@@ -13,7 +13,7 @@ export class FormCreateStudentComponent {
 
   constructor(private fb: FormBuilder) {
     this.newStudentForm = this.fb.group({
-      name: [''],
+      name: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]],
       lastName: [''],
       ci: [null],
       location: [''],
