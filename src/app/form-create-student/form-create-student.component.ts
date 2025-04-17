@@ -14,10 +14,10 @@ export class FormCreateStudentComponent {
   constructor(private fb: FormBuilder) {
     this.newStudentForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]],
-      lastName: [''],
-      ci: [null],
+      lastName: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]],
+      ci: [null, [Validators.required]],
       location: [''],
-      birth: [null],
+      birth: [null, [Validators.required]],
     });
   }
 
