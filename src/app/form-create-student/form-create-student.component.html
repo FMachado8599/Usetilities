@@ -5,8 +5,24 @@
 >
   <h2>Create Student</h2>
   <div>
-    <label for="name">Name</label>
-    <input type="text" placeholder="Liam" formControlName="name" required />
+    <div>
+      <label for="name">Name</label>
+      <input type="text" placeholder="Liam" formControlName="name" required />
+        <!-- NAME -->
+      @if (isNameInvalid) {
+      <div>
+        @if (nameControl?.hasError('required')) {
+          <span>A name is required</span>
+        }
+        @if (nameControl?.hasError('minLength')) {
+          <span>Name must have 3 characters</span>
+        }
+        @if (nameControl?.hasError('maxLength')) {
+          <span>Name must have less than 20 characters</span>
+        }
+      </div>    
+      }
+    </div>
     <label for="lastname">Last Name</label>
     <input
       type="text"
@@ -14,6 +30,20 @@
       formControlName="lastName"
       required
     />
+    <!-- NAME -->
+    @if (isLastNameInvalid) {
+      <div>
+        @if (lastNameControl?.hasError('required')) {
+          <span>A last name is required</span>
+        }
+        @if (lastNameControl?.hasError('minLength')) {
+          <span>Last name must have 3 characters</span>
+        }
+        @if (lastNameControl?.hasError('maxLength')) {
+          <span>Last name must have less than 20 characters</span>
+        }
+      </div>    
+      }
   </div>
   <div>
     <label for="ci">C.I.</label>
@@ -37,26 +67,6 @@
   </div>
   <div class="form-create-student-submition">
     <div class="form-create-student-submition-errors">
-      <!-- NAME -->
-      <span *ngIf="this.newStudentForm.get('name')?.errors?.['required']">
-        Name cant be empty
-      </span>
-      <span *ngIf="this.newStudentForm.get('name')?.errors?.['minlength']">
-        Name cant be less than 3 characters
-      </span>
-      <span *ngIf="this.newStudentForm.get('name')?.errors?.['maxlength']">
-        Name cant be more than 20 characters
-      </span>
-      <!-- LAST NAME -->
-      <span *ngIf="this.newStudentForm.get('lastName')?.errors?.['required']">
-        Last name cant be empty
-      </span>
-      <span *ngIf="this.newStudentForm.get('lastName')?.errors?.['minlength']">
-        Last name cant be less than 3 characters
-      </span>
-      <span *ngIf="this.newStudentForm.get('lastName')?.errors?.['maxlength']">
-        Last name cant be more than 20 characters
-      </span>
       <!-- CI -->
       <span *ngIf="this.newStudentForm.get('ci')?.errors?.['required']">
         Your CI can not be empty

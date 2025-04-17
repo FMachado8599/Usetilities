@@ -27,23 +27,23 @@ export class FormCreateStudentComponent {
       console.log(this.newStudentForm.value);
     }
   }
-  get name(){
+  get nameControl(){
     return this.newStudentForm.get('name');
   }
-  get isNameValid(){
-    return this.name?.touched && this.name?.valid;
+  get isNameInvalid(){
+    return this.nameControl?.touched && this.nameControl?.invalid;
   }
-  get lastName(){
+  get lastNameControl(){
     return this.newStudentForm.get('lastName');
   }
-  get isLastNameValid(){
-    return this.lastName?.touched && this.lastName?.valid;
+  get isLastNameInvalid(){
+    return this.lastNameControl?.touched && this.lastNameControl?.invalid;
   }
-  get ci(){
+  get ciControl(){
     return this.newStudentForm.get('ci');
   }
-  get isCiValid(){
-    return this.ci?.touched && this.ci?.valid;
+  get isCiInvalid(){
+    return this.ciControl?.touched && this.ciControl?.invalid;
   }
 }
 
