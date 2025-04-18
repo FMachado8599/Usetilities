@@ -1,82 +1,82 @@
 <form
   [formGroup]="newStudentForm"
   (ngSubmit)="submit()"
-  class="form-create-student"
+  class="col form-create-student"
 >
   <h2>Create Student</h2>
-  <div>
-    <div>
-      <label for="name">Name</label>
-      <input type="text" placeholder="Liam" formControlName="name" required />
+  <div class="student-name-row container-md row mb-4 gx-lg-5 row-cols-lg-3 row-cols-md-1">
+    <div class="form-create-student-name col-lg-6 col-md-12">
+      <label class="m-0 row col-lg-12 col-md-12" for="name">Name</label>
+      <input class="col-lg-12 col-md-12" type="text" placeholder="Liam" formControlName="name" required />
         <!-- NAME -->
       @if (isNameInvalid) {
       <div>
         @if (nameControl?.hasError('required')) {
           <span>A name is required</span>
-        }
-        @if (nameControl?.hasError('minLength')) {
+        }@else if (nameControl?.hasError('minlength')) {
           <span>Name must have 3 characters</span>
-        }
-        @if (nameControl?.hasError('maxLength')) {
+        }@else if (nameControl?.hasError('maxlength')) {
           <span>Name must have less than 20 characters</span>
         }
       </div>    
       }
     </div>
-    <label for="lastname">Last Name</label>
-    <input
-      type="text"
-      placeholder="Holland"
-      formControlName="lastName"
-      required
-    />
-    <!-- NAME -->
-    @if (isLastNameInvalid) {
-      <div>
-        @if (lastNameControl?.hasError('required')) {
-          <span>A last name is required</span>
+    <div class="form-create-student-lastname col-lg-6 col-md-12">
+      <label class="m-0 row col-lg-12 col-md-12" for="lastname">Lastname</label>
+      <input class="col-lg-12 col-md-12"
+        type="text"
+        placeholder="Holland"
+        formControlName="lastName"
+        required
+      />
+      <!-- LASTNAME -->
+      @if (isLastnameInvalid) {
+        <div>
+          @if (lastnameControl?.hasError('required')) {
+            <span>A lastname is required</span>
+          }@else if (lastnameControl?.hasError('minlength')) {
+            <span>Lastname must have 3 characters</span>
+          }@else if (lastnameControl?.hasError('maxlength')) {
+            <span>Lastname must have less than 20 characters</span>
+          }
+        </div>    
         }
-        @if (lastNameControl?.hasError('minLength')) {
-          <span>Last name must have 3 characters</span>
-        }
-        @if (lastNameControl?.hasError('maxLength')) {
-          <span>Last name must have less than 20 characters</span>
-        }
-      </div>    
-      }
+    </div>
   </div>
-  <div>
-    <label for="ci">C.I.</label>
+  <div class="row px-4 mb-4 mx-0 form-create-student-ci col-lg-12 ">
+    <label for="ci" class="p-0 col-lg-12">C.I.</label>
     <input
+      class="p-0 col-lg-6"
       type="number"
       placeholder="1234567-8"
       formControlName="ci"
       required
     />
+    @if (isCiInvalid) {
+      <div>
+        @if (ciControl?.hasError('required')) {
+          <span>A C.I. is required</span>
+        }@else if (ciControl?.hasError('correctCI')) {
+          <span>C.I. must 8 characters long</span>
+        }
+      </div>    
+      }
   </div>
-  <div>
-    <label for="location">Location</label>
+  <div class="row px-4 mb-4 mx-0 form-create-student-location col-lg-6">
+    <label class="p-0" for="location">Location</label>
     <input
+      class="p-0"
       type="text"
       placeholder="Frankfurt, Germany"
       formControlName="location"
       required
     />
-    <label for="birth">Birth Date</label>
-    <input type="date" placeholder="" formControlName="birth" required />
   </div>
-  <div class="form-create-student-submition">
-    <div class="form-create-student-submition-errors">
-      <!-- CI -->
-      <span *ngIf="this.newStudentForm.get('ci')?.errors?.['required']">
-        Your CI can not be empty
-      </span>
-      <span *ngIf="this.newStudentForm.get('ci')?.errors?.['correctCI']">
-        CI number must be 8 characters long
-      </span>
-    </div>
-    <button type="submit" class="form-create-student-submition-button">Create</button>
+  <div class="row px-4 mb-4 mx-0 form-create-student-birth col-lg-6 ">
+    <label class="p-0" for="birth">Birth Date</label>
+    <input class="p-0" type="date" placeholder="" formControlName="birth" required />
   </div>
+  <button type="submit" class="form-create-student-submition-button mx-4">Create</button>
 </form>
 <div style="color: aliceblue">
   {{ newStudentForm.value | json }}

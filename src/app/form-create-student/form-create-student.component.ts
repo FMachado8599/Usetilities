@@ -14,8 +14,8 @@ export class FormCreateStudentComponent {
 
   constructor(private fb: FormBuilder) {
     this.newStudentForm = this.fb.group({
-      name: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]],
-      lastName: ['', [Validators.required, Validators.minLength(5), Validators.maxLength(20)]],
+      name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
+      lastName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       ci: [null, [Validators.required, correctCI]],
       location: [''],
       birth: [null, [Validators.required]],
@@ -33,11 +33,11 @@ export class FormCreateStudentComponent {
   get isNameInvalid(){
     return this.nameControl?.touched && this.nameControl?.invalid;
   }
-  get lastNameControl(){
+  get lastnameControl(){
     return this.newStudentForm.get('lastName');
   }
-  get isLastNameInvalid(){
-    return this.lastNameControl?.touched && this.lastNameControl?.invalid;
+  get isLastnameInvalid(){
+    return this.lastnameControl?.touched && this.lastnameControl?.invalid;
   }
   get ciControl(){
     return this.newStudentForm.get('ci');
