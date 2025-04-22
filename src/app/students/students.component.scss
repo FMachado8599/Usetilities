@@ -1,4 +1,5 @@
 .section-container{
+    height: clamp(300px, 100%, 500px);
     & .section-options{
         display: flex;
         flex-direction: row;
@@ -80,23 +81,30 @@
                 }
             }
             & .student-presenteeism{
-                align-content: center;
-                text-align: center;
-            }
-            & .student-online{
-                color: #10c210;
-            }
-            & .student-offline{
-                color: #ee0000;
-            }
-            & .lowAttendance{
-                color: #ee0000;
-            }
-            & .highAttendance{
-                color: #10c210;
-            }
-            & .fullAttendance{
-                color: #f2c024;
+
+                & div{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 99px;
+
+                }
+                & .student-online{
+                    color: #10c210;
+                }
+                & .student-offline{
+                    color: #ee0000;
+                }
+                & .lowAttendance{
+                    color: #ee0000;
+                }
+                & .highAttendance{
+                    color: #10c210;
+                }
+                & .fullAttendance{
+                    color: #f2c024;
+                    text-shadow: 0px 0px 20px #f2c024;
+                }
             }
 
         }

@@ -44,16 +44,17 @@
             } @else{
             <td class="student-offline">Offline</td>
             }
-            <td
-              class="student-presenteeism"
-              [ngClass]="{
-                lowAttendance: student.presenteeism < 90,
-                highAttendance:
-                  student.presenteeism >= 90 && student.presenteeism < 100,
-                fullAttendance: student.presenteeism == 100
-              }"
-            >
-              {{ student.presenteeism }}
+            <td class="student-presenteeism">
+              <div
+                [ngClass]="{
+                  lowAttendance: student.presenteeism < 90,
+                  highAttendance:
+                    student.presenteeism >= 90 && student.presenteeism < 100,
+                  fullAttendance: student.presenteeism == 100
+                }"
+              >
+                {{ student.presenteeism }}
+              </div>
             </td>
             <td>
               <img

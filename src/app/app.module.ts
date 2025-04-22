@@ -9,6 +9,7 @@ import { StudentsComponent } from './students/students.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormCreateStudentComponent } from './form-create-student/form-create-student.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FormCreateStudentComponent } from './form-create-student/form-create-st
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
