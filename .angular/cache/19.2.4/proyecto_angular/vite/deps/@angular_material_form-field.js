@@ -1,4 +1,7 @@
 import {
+  MatFormFieldModule
+} from "./chunk-PARIKHSX.js";
+import {
   MAT_ERROR,
   MAT_FORM_FIELD,
   MAT_FORM_FIELD_DEFAULT_OPTIONS,
@@ -7,7 +10,6 @@ import {
   MatError,
   MatFormField,
   MatFormFieldControl,
-  MatFormFieldModule,
   MatHint,
   MatLabel,
   MatPrefix,
@@ -15,11 +17,14 @@ import {
   getMatFormFieldDuplicatedHintError,
   getMatFormFieldMissingControlError,
   getMatFormFieldPlaceholderConflictError
-} from "./chunk-STHTZIKY.js";
-import "./chunk-HOB5MKW7.js";
-import "./chunk-TSTR7WG5.js";
-import "./chunk-BAPUTANS.js";
-import "./chunk-K326IWKT.js";
+} from "./chunk-EVI4RGV6.js";
+import "./chunk-KBUFFIVA.js";
+import "./chunk-NZVHDT3T.js";
+import "./chunk-IJ3KGSPX.js";
+import "./chunk-OY6KZ2IX.js";
+import "./chunk-IVDZM2FP.js";
+import "./chunk-Z5LLNARD.js";
+import "./chunk-DLVQLVDB.js";
 
 // node_modules/@angular/material/fesm2022/form-field.mjs
 var matFormFieldAnimations = {

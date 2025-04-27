@@ -1,33 +1,14 @@
 import {
   isPlatformBrowser
-} from "./chunk-BAPUTANS.js";
+} from "./chunk-Z5LLNARD.js";
 import {
-  ApplicationRef,
   ElementRef,
-  EnvironmentInjector,
   Injectable,
-  Injector,
   PLATFORM_ID,
-  VERSION,
-  createComponent,
   inject,
   setClassMetadata,
   ɵɵdefineInjectable
-} from "./chunk-K326IWKT.js";
-
-// node_modules/@angular/cdk/fesm2022/element-CpqV8p-X.mjs
-function coerceNumberProperty(value, fallbackValue = 0) {
-  if (_isNumberValue(value)) {
-    return Number(value);
-  }
-  return arguments.length === 2 ? fallbackValue : 0;
-}
-function _isNumberValue(value) {
-  return !isNaN(parseFloat(value)) && !isNaN(Number(value));
-}
-function coerceElement(elementOrRef) {
-  return elementOrRef instanceof ElementRef ? elementOrRef.nativeElement : elementOrRef;
-}
+} from "./chunk-DLVQLVDB.js";
 
 // node_modules/@angular/cdk/fesm2022/platform-Do3uqmxu.mjs
 var hasV8BreakIterator;
@@ -90,73 +71,23 @@ var Platform = class _Platform {
   }], () => [], null);
 })();
 
-// node_modules/@angular/cdk/fesm2022/backwards-compatibility-DYuVCOXM.mjs
-function _bindEventWithOptions(renderer, target, eventName, callback, options) {
-  const major = parseInt(VERSION.major);
-  const minor = parseInt(VERSION.minor);
-  if (major > 19 || major === 19 && minor > 0 || major === 0 && minor === 0) {
-    return renderer.listen(target, eventName, callback, options);
+// node_modules/@angular/cdk/fesm2022/element-CpqV8p-X.mjs
+function coerceNumberProperty(value, fallbackValue = 0) {
+  if (_isNumberValue(value)) {
+    return Number(value);
   }
-  target.addEventListener(eventName, callback, options);
-  return () => {
-    target.removeEventListener(eventName, callback, options);
-  };
+  return arguments.length === 2 ? fallbackValue : 0;
+}
+function _isNumberValue(value) {
+  return !isNaN(parseFloat(value)) && !isNaN(Number(value));
+}
+function coerceElement(elementOrRef) {
+  return elementOrRef instanceof ElementRef ? elementOrRef.nativeElement : elementOrRef;
 }
 
-// node_modules/@angular/cdk/fesm2022/style-loader-WcmCyO2o.mjs
-var appsWithLoaders = /* @__PURE__ */ new WeakMap();
-var _CdkPrivateStyleLoader = class __CdkPrivateStyleLoader {
-  _appRef;
-  _injector = inject(Injector);
-  _environmentInjector = inject(EnvironmentInjector);
-  /**
-   * Loads a set of styles.
-   * @param loader Component which will be instantiated to load the styles.
-   */
-  load(loader) {
-    const appRef = this._appRef = this._appRef || this._injector.get(ApplicationRef);
-    let data = appsWithLoaders.get(appRef);
-    if (!data) {
-      data = {
-        loaders: /* @__PURE__ */ new Set(),
-        refs: []
-      };
-      appsWithLoaders.set(appRef, data);
-      appRef.onDestroy(() => {
-        appsWithLoaders.get(appRef)?.refs.forEach((ref) => ref.destroy());
-        appsWithLoaders.delete(appRef);
-      });
-    }
-    if (!data.loaders.has(loader)) {
-      data.loaders.add(loader);
-      data.refs.push(createComponent(loader, {
-        environmentInjector: this._environmentInjector
-      }));
-    }
-  }
-  static ɵfac = function _CdkPrivateStyleLoader_Factory(__ngFactoryType__) {
-    return new (__ngFactoryType__ || __CdkPrivateStyleLoader)();
-  };
-  static ɵprov = ɵɵdefineInjectable({
-    token: __CdkPrivateStyleLoader,
-    factory: __CdkPrivateStyleLoader.ɵfac,
-    providedIn: "root"
-  });
-};
-(() => {
-  (typeof ngDevMode === "undefined" || ngDevMode) && setClassMetadata(_CdkPrivateStyleLoader, [{
-    type: Injectable,
-    args: [{
-      providedIn: "root"
-    }]
-  }], null, null);
-})();
-
 export {
-  coerceNumberProperty,
-  coerceElement,
   Platform,
-  _bindEventWithOptions,
-  _CdkPrivateStyleLoader
+  coerceNumberProperty,
+  coerceElement
 };
-//# sourceMappingURL=chunk-TSTR7WG5.js.map
+//# sourceMappingURL=chunk-OY6KZ2IX.js.map

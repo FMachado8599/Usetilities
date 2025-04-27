@@ -4,6 +4,8 @@ import { NewStudentFormComponent } from './components/new-student-form/new-stude
 import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
+import { MatDatepicker, MatDatepickerModule } from '@angular/material/datepicker';
+
 
 @NgModule({
   declarations: [
@@ -14,12 +16,15 @@ import {FormsModule} from '@angular/forms';
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDatepicker,
+    MatDatepickerModule
   ],
   exports: [
     NewStudentFormComponent,
     FormsModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDatepicker,
   ],
 })
 export class SharedModule { }

@@ -1,14 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { correctCI } from '../../../utils/custom-validators';
+import { provideNativeDateAdapter } from '@angular/material/core';
+import { ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-new-student-form',
   standalone: false,
   templateUrl: './new-student-form.component.html',
-  styleUrl: './new-student-form.component.scss'
+  styleUrl: './new-student-form.component.scss',
+  providers: [provideNativeDateAdapter()],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  encapsulation: ViewEncapsulation.None,
 })
 export class NewStudentFormComponent {
+
   public newStudentForm : FormGroup;
 
   constructor(private fb: FormBuilder) {
