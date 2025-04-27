@@ -32,8 +32,8 @@
               </div>
             </th>
             <td class="student-career">
-              <span *ngFor="let careerId of student.careers; let last = last">
-                {{ getCareerName(careerId) }}<span *ngIf="!last">, </span>
+              <span *ngFor="let courseId of student.courses; let last = last">
+                {{ getCourseName(courseId) }}<span *ngIf="!last">, </span>
               </span>
             </td>
             <td>
@@ -44,7 +44,10 @@
             } @else{
             <td class="student-offline">Offline</td>
             }
-            <td class="student-presenteeism">
+            <td
+              class="student-presenteeism"
+              *ngIf="student.presenteeism !== undefined"
+            >
               <div
                 [ngClass]="{
                   lowAttendance: student.presenteeism < 90,
@@ -53,7 +56,7 @@
                   fullAttendance: student.presenteeism == 100
                 }"
               >
-                {{ student.presenteeism }}
+                {{ student.presenteeism || "N/A" }}
               </div>
             </td>
             <td>

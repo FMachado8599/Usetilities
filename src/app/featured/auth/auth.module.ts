@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StudentsService } from './services/students.service';
 
 
 
@@ -8,9 +7,6 @@ import { StudentsService } from './services/students.service';
   declarations: [],
   imports: [
     CommonModule
-  ],
-  providers: [
-    StudentsService
-  ],
+  ]
 })
-export class StudentsModule { }
+export class AuthModule { }
