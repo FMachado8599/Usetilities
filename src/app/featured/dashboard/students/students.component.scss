@@ -60,7 +60,7 @@
                     justify-content: start;
                     & p{
                         font-size: 14px;
-                        font-weight: 500;
+                        font-weight: 400;
                         color: hsl(1deg, 1%, 100%); 
                     }
                     & .student-img{
@@ -71,7 +71,8 @@
                 }
             }
             & td{
-                font-weight: 600;
+                font-size: .9rem;
+                font-weight: 400;
                 padding: .8rem;
                 border-bottom: 2px solid hsl(1deg, 1%, 15%);
                 & .student-edit{
@@ -106,7 +107,9 @@
                     color: #f2c024;
                     text-shadow: 0px 0px 20px #f2c024;
                 }
+                
             }
+
 
         }
     }
@@ -115,5 +118,11 @@
         background-color: hsl(1deg, 1%, 6%);
     }
 }
+
+.noAttendance{
+        color: white;
+        text-align: center;
+}
+
 
 

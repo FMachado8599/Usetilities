@@ -47,7 +47,7 @@
             }
             <td
               class="student-presenteeism"
-              *ngIf="student.presenteeism !== undefined"
+              *ngIf="student.presenteeism !== undefined; else elseBlock"
             >
               <div
                 [ngClass]="{
@@ -60,6 +60,9 @@
                 {{ student.presenteeism || "N/A" }}
               </div>
             </td>
+            <ng-template class="udefined-presenteeism" #elseBlock>
+              <td class="noAttendance">N/A</td>
+            </ng-template>
             <td>
               <img
                 class="student-edit"

@@ -1,8 +1,10 @@
+
 <form
   [formGroup]="newStudentForm"
   (ngSubmit)="submit()"
   class="new-student-form"
 >
+  <h2>Create Student</h2>
   <table class="example-full-width" cellspacing="0">
     <tr>
       <td>
@@ -81,13 +83,17 @@
       <td>
         <mat-form-field class="example-full-width">
           <mat-label>Location</mat-label>
-          <input matInput placeholder="Ex. San Francisco" />
+          <input matInput 
+          formControlName="location"
+          placeholder="Ex. San Francisco" />
         </mat-form-field>
       </td>
       <td>
         <mat-form-field class="example-full-width">
           <mat-label>Choose a date</mat-label>
-          <input matInput [matDatepicker]="picker" />
+          <input matInput 
+          formControlName="birth"
+          [matDatepicker]="picker" />
           <mat-hint>MM/DD/YYYY</mat-hint>
           <mat-datepicker-toggle
             matIconSuffix
@@ -98,8 +104,10 @@
       </td>
     </tr>
   </table>
-  <button class="submit-button">Submit</button>
+  <button mat-raised-button class="submit-button" type="submit" >Submit</button>
+  <!-- @if (newStudent){
+    <div class="form-error-message">
+      <span>Student created successfully</span>
+    </div>
+  } -->
 </form>
-<div style="color: aliceblue">
-  {{ newStudentForm.value | json }}
-</div>

@@ -20,8 +20,6 @@ export interface Student {
 })
 export class StudentsService {
 
-  
-
   private _students: Student[] = [
     {
       "ci": 12345678,
