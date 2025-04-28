@@ -10,7 +10,7 @@ export interface Student {
   presenteeism?:number;
   courses?:number[];
   careers?:number[];
-  birth:Date;
+  birth?:Date;
   bio?:string;
   online?:boolean;
 }

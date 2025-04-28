@@ -1,5 +1,5 @@
 .section-container{
-    height: clamp(300px, 100%, 500px);
+    height: clamp(auto, 100%, 500px);
     & .section-options{
         display: flex;
         flex-direction: row;
@@ -22,6 +22,7 @@
             }
         }
     }
+
     .student-section{
         display: flex;
         flex-direction: column;
@@ -114,3 +115,5 @@
         background-color: hsl(1deg, 1%, 6%);
     }
 }
+
+

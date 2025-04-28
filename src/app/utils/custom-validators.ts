@@ -1,14 +1,7 @@
 import { AbstractControl } from "@angular/forms";
 
 export function correctCI(control: AbstractControl){
-    const value = control.value;
+    const value = control.value?.toString() ?? '';
 
-    if (value == null || value === ''){
-        return null;
-    }
-
-    if (value.length === 8){
-        return {correctCI: true};
-    }
-    return null;
+    return value.length === 8 ? null : { correctCI: true };
 }

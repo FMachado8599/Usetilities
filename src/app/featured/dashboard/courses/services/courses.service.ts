@@ -30,6 +30,38 @@ export class CoursesService {
       "moreInfo": "Covers literature, history, and social studies.",
       "about": "A three-year program aimed at developing critical thinking.",
       "classes": ["History", "Literature", "Philosophy"]
+    },
+    {
+      "id": 3,
+      "name": "Business",
+      "field": "Commerce & Management",
+      "moreInfo": "Includes finance, marketing, and management courses.",
+      "about": "A four-year degree that prepares students for business roles.",
+      "classes": ["Accounting", "Marketing", "Management"]
+    },
+    {
+      "id": 4,
+      "name": "Education",
+      "field": "Teaching & Learning",
+      "moreInfo": "Focuses on pedagogy and educational psychology.",
+      "about": "A three-year program aimed at preparing future educators.",
+      "classes": ["Pedagogy", "Psychology", "Curriculum Development"]
+    },
+    {
+      "id": 5,
+      "name": "Health Sciences",
+      "field": "Medicine & Health",
+      "moreInfo": "Includes courses in biology, chemistry, and health care.",
+      "about": "A four-year degree that prepares students for health-related careers.",
+      "classes": ["Biology", "Chemistry", "Anatomy"]
+    },
+    {
+      "id": 6,
+      "name": "Arts",
+      "field": "Creative Arts",
+      "moreInfo": "Covers visual arts, music, and performing arts.",
+      "about": "A three-year program aimed at developing creative skills.",
+      "classes": ["Painting", "Music Theory", "Drama"]
     }
   ]
 

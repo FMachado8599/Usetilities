@@ -1,17 +1,53 @@
-<form class="example-form">
+<form
+  [formGroup]="newStudentForm"
+  (ngSubmit)="submit()"
+  class="new-student-form"
+>
   <table class="example-full-width" cellspacing="0">
     <tr>
       <td>
         <mat-form-field class="example-full-width">
           <mat-label>First name</mat-label>
-          <input matInput placeholder="Tom" />
+          <input
+            matInput
+            placeholder="Tom"
+            type="text"
+            formControlName="name"
+          />
         </mat-form-field>
+        @if (isNameInvalid) {
+        <div class="form-error-message">
+          @if (nameControl?.hasError('required')) {
+          <span>A name is required</span>
+          }@else if (nameControl?.hasError('minlength')) {
+          <span>Name must have 3 characters</span>
+          }@else if (nameControl?.hasError('maxlength')) {
+          <span>Name must have less than 20 characters</span>
+          }
+        </div>
+        }
       </td>
       <td>
         <mat-form-field class="example-full-width">
           <mat-label>Last Name</mat-label>
-          <input matInput placeholder="Hidleston" />
+          <input
+            matInput
+            placeholder="Hidleston"
+            type="text"
+            formControlName="lastName"
+          />
         </mat-form-field>
+        @if (isLastnameInvalid) {
+        <div class="form-error-message">
+          @if (lastnameControl?.hasError('required')) {
+          <span>A last name is required</span>
+          }@else if (lastnameControl?.hasError('minlength')) {
+          <span>Last name must have 3 characters</span>
+          }@else if (lastnameControl?.hasError('maxlength')) {
+          <span>Last name must have less than 20 characters</span>
+          }
+        </div>
+        }
       </td>
     </tr>
   </table>
@@ -19,22 +55,33 @@
   <p>
     <mat-form-field class="example-full-width">
       <mat-label>CI</mat-label>
-      <input matInput placeholder="55544441" maxlength="8" />
+      <input
+        matInput
+        placeholder="55544441"
+        maxlength="8"
+        type="number"
+        formControlName="ci"
+      />
     </mat-form-field>
+    @if (isCiInvalid) {
+      <div class="form-error-message">
+        @if (ciControl?.hasError('required')) {
+        <span>A C.I. is required</span>
+        }@else if (ciControl?.hasError('minlength') || ciControl?.hasError('maxlength')) {
+        <span>C.I. must be exactly 8 characters long</span>
+        }@else if (ciControl?.hasError('correctCI')) {
+        <span>C.I. must 8 characters long</span>
+        }
+      </div>
+      }
   </p>
 
   <table class="example-full-width" cellspacing="0">
     <tr>
       <td>
         <mat-form-field class="example-full-width">
-          <mat-label>City</mat-label>
+          <mat-label>Location</mat-label>
           <input matInput placeholder="Ex. San Francisco" />
-        </mat-form-field>
-      </td>
-      <td>
-        <mat-form-field class="example-full-width">
-          <mat-label>State</mat-label>
-          <input matInput placeholder="Ex. California" />
         </mat-form-field>
       </td>
       <td>
@@ -51,4 +98,8 @@
       </td>
     </tr>
   </table>
+  <button class="submit-button">Submit</button>
 </form>
+<div style="color: aliceblue">
+  {{ newStudentForm.value | json }}
+</div>
