@@ -1,8 +1,17 @@
+// main {
+//     width: 100%;
+//     min-height: 100svh;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: start;
+//     align-items: center;
+//     box-sizing: inherit;
+//     background-color: hsl(1deg, 1%, 0%);
+// }
 .content {
     display: grid;
     grid-template-rows: auto 1fr;
     max-width: 1200px;
-    width: 100%;
     padding: 1rem;
     gap: 1rem;
     background-color: hsl(1deg, 1%, 6%);

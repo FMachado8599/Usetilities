@@ -2,7 +2,7 @@
   <h1>Login</h1>
   <mat-card>
     <mat-card-title>Login</mat-card-title>
-    <form [formGroup]="loginForm" (submit)="submit()">
+    <form [formGroup]="loginForm" (ngSubmit)="submit()">
       <div>
         <mat-form-field>
           <mat-label>Email</mat-label>

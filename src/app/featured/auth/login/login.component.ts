@@ -11,7 +11,7 @@ import { AuthService } from '../../../core/services/auth.service';
 })
 export class LoginComponent {
   
-  public loginForm: FormGroup;
+  loginForm: FormGroup;
 
   constructor(
     private fb: FormBuilder,
@@ -22,9 +22,11 @@ export class LoginComponent {
       email: ['', [Validators.required, Validators.email]],
       password: ['',[Validators.required, Validators.minLength(3)]],
     });
+    console.log('Formulario inicializado:', this.loginForm);
   }
   submit(){
     if (this.loginForm.valid) {
+      console.log('Submit ejecutado', this.loginForm.value);
       const {email, password } = this.loginForm.value;
   
       const logged = this.authService.login(email, password);
