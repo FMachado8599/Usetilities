@@ -19,6 +19,7 @@
     border-radius: 0.5rem;
     box-shadow: 0 0 .5rem hsl(1deg, 1%, 10%);
     margin: var(--margin-1);
+    min-height: 1000px;
     .main-content {
         display: grid;
         height: calc(100% - 2rem);

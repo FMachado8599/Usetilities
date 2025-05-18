@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { DirectivesComponent } from './directives/directives.component';
+import { DirectivesComponent } from './shared/directives/directives.component';
 
 import { SharedModule } from './shared/shared.module';
 import { DashboardModule } from './featured/dashboard/dashboard.module';

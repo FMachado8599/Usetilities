@@ -2,35 +2,38 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DashboardRoutingModule } from './dashboard-routing.module';
-import { CoursesComponent } from './courses/courses.component';
+import { CoursesComponent } from './pages/courses/courses.component';
 import { DashboardComponent } from './dashboard.component';
-import { ToolbarComponent } from '../../toolbar/toolbar.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { StudentsComponent } from './students/students.component';
+import { HeaderComponent } from './components/header/header.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 import { SharedModule } from '../../shared/shared.module';
-import { ClassesComponent } from './classes/classes.component';
+import { UsersComponent } from './pages/users/users.component';
+import { HomeModule } from './pages/home/home.module';
+import { StudentsModule } from './pages/students/students.module';
 
 @NgModule({
   declarations: [
     CoursesComponent,
     DashboardComponent,
-    ToolbarComponent,
+    HeaderComponent,
     NavbarComponent,
-    StudentsComponent,
-    ClassesComponent,
+    UsersComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
-    DashboardRoutingModule
+    DashboardRoutingModule,
+    StudentsModule,
+    // CoursesModule,
+    HomeModule
   ],
   exports: [
     DashboardComponent,
-    CoursesComponent,
-    ToolbarComponent,
+    HeaderComponent,
     NavbarComponent,
-    StudentsComponent,
-    ClassesComponent,
+    CoursesComponent,
+    StudentsModule,
+    UsersComponent,
   ],
   providers: [],
 

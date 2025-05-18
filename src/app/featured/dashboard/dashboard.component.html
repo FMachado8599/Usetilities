@@ -1,9 +1,9 @@
 <div class="content">
-  <app-toolbar class="toolbar"></app-toolbar>
+  <dashboard-header></dashboard-header>
   <div class="main-content">
-    <app-navbar></app-navbar>
-    <div class="information-container">
-      <app-students></app-students>
+    <dashboard-navbar></dashboard-navbar>
+    <div class="information-display">
+      <router-outlet></router-outlet>
     </div>
   </div>
 </div>
