@@ -8,6 +8,7 @@ import { DirectivesComponent } from './shared/directives/directives.component';
 import { SharedModule } from './shared/shared.module';
 import { DashboardModule } from './featured/dashboard/dashboard.module';
 import { AuthModule } from './featured/auth/auth.module';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,7 @@ import { AuthModule } from './featured/auth/auth.module';
     DashboardModule,
     AuthModule,
   ],
-  providers: [],
+  providers: [provideHttpClient(withFetch())],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -19,11 +19,12 @@
             position: relative;
             font-size: small;
             font-weight: 700;
-            padding: 1rem 0 1rem 1rem;
             filter: drop-shadow(0 0 .3rem transparent);
             border-radius: .5rem 0 0 .5rem;
             cursor: pointer;
             width: 100%;
+            padding: 0px !important;
+            overflow: hidden;
             & a{
                 display: flex;
                 flex-direction: row;
@@ -31,6 +32,7 @@
                 justify-content: flex-start;
                 gap: 1rem;
                 color: white;
+                padding: 1rem 0 1rem 1rem;
                 & img{
                 width: 24px;
                 height: 24px;
@@ -40,23 +42,9 @@
                     font-size: 1.2rem;
                     text-align: end;
                 }
-
             }
-            &:hover{
-                background:rgba(242, 24, 84, .1);
-                color: rgba(242, 24, 84, 1);
-                & a{
-                    color: rgba(242, 24, 84, 1);
-                    & img{
-                        fill: rgba(242, 24, 84, 1) !important;
-                        & svg{
-                            fill: rgba(242, 24, 84, 1) !important;
-                        }
-                    }
-                }
-            }
-            &:active{
-                background:rgba(242, 24, 84, .1);
+            &:hover,.active-link,:active{
+                background:rgba(242, 24, 84, .2);
                 color: rgba(242, 24, 84, 1);
                 & a{
                     color: rgba(242, 24, 84, 1);

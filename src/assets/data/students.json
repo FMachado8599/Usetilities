@@ -1,21 +1,19 @@
 [
   {
-    "ci": "12345678",
+    "ci": 12345678,
     "avatar": "https://example.com/avatar1.jpg",
     "name": "John",
     "lastName": "Doe",
     "location": "New York, USA",
-    "score": 95,
-    "presenteeism": 98,
+    "score": 100,
+    "presenteeism": 100,
     "courses": [1, 2],
-    "careers": [1],
-    "nationality": "American",
-    "age": 22,
+    "birth": "2000-01-22",
     "bio": "A passionate student focused on engineering and scientific research.",
     "online": true
   },
   {
-    "ci": "87654321",
+    "ci": 87654321,
     "avatar": "https://example.com/avatar2.jpg",
     "name": "Ana",
     "lastName": "González",
@@ -23,14 +21,12 @@
     "score": 88,
     "presenteeism": 90,
     "courses": [3, 4],
-    "careers": [2],
-    "nationality": "Spanish",
-    "age": 21,
+    "birth": "2000-01-21",
     "bio": "Lover of books and historical research, aiming for a career in education.",
-    "online": true
+    "online": false
   },
   {
-    "ci": "11223344",
+    "ci": 11223344,
     "avatar": "https://example.com/avatar3.jpg",
     "name": "Liam",
     "lastName": "Smith",
@@ -38,29 +34,25 @@
     "score": 92,
     "presenteeism": 97,
     "courses": [2, 5],
-    "careers": [1, 3],
-    "nationality": "Canadian",
-    "age": 23,
+    "birth": "2000-01-23",
     "bio": "Aspiring software engineer with a passion for AI and robotics.",
     "online": true
   },
   {
-    "ci": "55667788",
+    "ci": 55667788,
     "avatar": "https://example.com/avatar4.jpg",
     "name": "Sophie",
     "lastName": "Dubois",
     "location": "Paris, France",
     "score": 85,
-    "presenteeism": 92,
+    "presenteeism": 82,
     "courses": [3, 6],
-    "careers": [2],
-    "nationality": "French",
-    "age": 20,
+    "birth": "2000-01-20",
     "bio": "Art and literature enthusiast, specializing in French and European history.",
-    "online": true
+    "online": false
   },
   {
-    "ci": "99887766",
+    "ci": 99887766,
     "avatar": "https://example.com/avatar5.jpg",
     "name": "Carlos",
     "lastName": "Fernández",
@@ -68,14 +60,12 @@
     "score": 90,
     "presenteeism": 94,
     "courses": [1, 4],
-    "careers": [3],
-    "nationality": "Argentinian",
-    "age": 24,
+    "birth": "2000-01-24",
     "bio": "Economics student passionate about finance and business development.",
     "online": true
   },
   {
-    "ci": "33445566",
+    "ci": 33445566,
     "avatar": "https://example.com/avatar6.jpg",
     "name": "Emma",
     "lastName": "Taylor",
@@ -83,11 +73,10 @@
     "score": 87,
     "presenteeism": 95,
     "courses": [2, 5, 6],
-    "careers": [1, 2],
-    "nationality": "Australian",
-    "age": 22,
+    "birth": "2000-01-22",
     "bio": "Dedicated environmental scientist working on sustainability projects.",
     "online": true
   }
-  ]
+]
+
   

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
-import { StudentsService, Student } from './services/students.service';
-import { CoursesService, Course } from '../courses/services/courses.service';
+import { Student } from '../../../../core/interfaces/students-interface';
+import { Course } from '../../../../core/interfaces/courses-interface';
+import { StudentsService } from '../../../../core/services/students.service';
+import { CoursesService } from '../../../../core/services/courses.service';
 
 @Component({
   selector: 'information-display-students',
@@ -10,20 +12,21 @@ import { CoursesService, Course } from '../courses/services/courses.service';
 })
 
 export class StudentsComponent {
+
+  constructor(private studentsService: StudentsService, private coursesService: CoursesService) {}
  
   avatarPlaceholder: string = "/assets/png/avatar_placeholder_white.png";
 
   public students: Student[] = []
   public courses: Course[] = [];
 
-  constructor(
-    private studentService: StudentsService,
-    private coursesService: CoursesService
-  ) { };
-
-  ngOnInit() {
-    this.students = this.studentService.students;
-    this.courses = this.coursesService.courses;
+  ngOnInit(): void {
+    this.studentsService.getStudents().subscribe((data: Student[]) => {
+      this.students = data;
+    });
+    this.coursesService.getCourses().subscribe((data: Course[]) => {
+      this.courses = data;
+    });
   }
 
   getCourseName(id: number): string {
@@ -38,7 +41,6 @@ export class StudentsComponent {
     this.showForm = true;
   }
   onFormSubmitted() {
-    console.log("Se creó un nuevo estudiante, CERRANDO FORM");
     this.showForm = false;
   }
 

@@ -2,7 +2,8 @@ import { Component, ChangeDetectionStrategy, Output, EventEmitter } from '@angul
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { correctCI } from '../../../../../utils/custom-validators';
 import { provideNativeDateAdapter } from '@angular/material/core';
-import { StudentsService, Student } from '../services/students.service';
+import { StudentsService } from '../../../../../core/services/students.service';
+import { Student } from '../../../../../core/interfaces/students-interface';
 
 
 @Component({
