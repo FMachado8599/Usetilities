@@ -1,40 +1,40 @@
 [
-    {
-      "id": 1,
-      "name": "Engineering",
-      "field": "Science & Technology",
-      "description": "Focuses on mechanical, electrical, and civil engineering."
+  {
+    "id": 1,
+    "name": "Engineering",
+    "field": "Science & Technology",
+    "description": "Focuses on mechanical, electrical, and civil engineering."
 
-    },
-    {
-      "id": 2,
-      "name": "Humanities",
-      "field": "Arts & Social Sciences",
-      "description": "Covers literature, history, and social studies."
-    },
-    {
-      "id": 3,
-      "name": "Business",
-      "field": "Commerce & Management",
-      "description": "Includes finance, marketing, and management courses."
-    },
-    {
-      "id": 4,
-      "name": "Education",
-      "field": "Teaching & Learning",
-      "description": "Focuses on pedagogy and educational psychology."
-    },
-    {
-      "id": 5,
-      "name": "Health Sciences",
-      "field": "Medicine & Health",
-      "description": "Includes courses in biology, chemistry, and health care."
-    },
-    {
-      "id": 6,
-      "name": "Arts",
-      "field": "Creative Arts",
-      "description": "Covers visual arts, music, and performing arts."
-    }
-  ]
+  },
+  {
+    "id": 2,
+    "name": "Humanities",
+    "field": "Arts & Social Sciences",
+    "description": "Covers literature, history, and social studies."
+  },
+  {
+    "id": 3,
+    "name": "Business",
+    "field": "Commerce & Management",
+    "description": "Includes finance, marketing, and management courses."
+  },
+  {
+    "id": 4,
+    "name": "Education",
+    "field": "Teaching & Learning",
+    "description": "Focuses on pedagogy and educational psychology."
+  },
+  {
+    "id": 5,
+    "name": "Health Sciences",
+    "field": "Medicine & Health",
+    "description": "Includes courses in biology, chemistry, and health care."
+  },
+  {
+    "id": 6,
+    "name": "Arts",
+    "field": "Creative Arts",
+    "description": "Covers visual arts, music, and performing arts."
+  }
+]
   

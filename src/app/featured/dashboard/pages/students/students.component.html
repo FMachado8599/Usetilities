@@ -5,7 +5,14 @@
   ></app-new-student-form>
   <div class="section-options">
     <h1 class="main-component-title">Students</h1>
-    <button (click)="onAddStudent()">+ Add</button>
+    <button
+      *ngIf="!showForm"
+      class="entity-add-button"
+      (click)="onAddStudent()"
+    >
+      +
+      <mat-icon svgIcon="avatar" class="add-svg"></mat-icon>
+    </button>
   </div>
   <section class="student-section component-gral">
     <div>
@@ -17,18 +24,15 @@
             <th scope="col">Location</th>
             <th scope="col">Status</th>
             <th scope="col">Attendance</th>
-            <th scope="col">Edit</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let student of students">
             <th scope="row">
               <div class="d-flex flex-row gap-3">
-                <img
-                  [src]="avatarPlaceholder"
-                  alt="Avatar"
-                  class="student-img"
-                />
+                <mat-icon svgIcon="avatar" class="student-img"></mat-icon>
                 <div class="d-flex flex-row gap-1">
                   <p>{{ student.name }}</p>
                   <p>{{ student.lastName }}</p>
@@ -36,9 +40,7 @@
               </div>
             </th>
             <td class="student-career">
-              <span *ngFor="let courseId of student.courses; let last = last">
-                {{ getCourseName(courseId) }}<span *ngIf="!last">, </span>
-              </span>
+              {{ getStudentCoursesNames(student) }}
             </td>
             <td>
               {{ student.location }}
@@ -71,7 +73,17 @@
                 class="student-edit"
                 src="/assets/png/edit_white.png"
                 alt="Edit"
+                [routerLink]="[student.id]"
+                aria-label="Editar estudiante"
               />
+            </td>
+            <td>
+              <shared-confirm-dialog-button
+                [entityName]="student.name"
+                [studentId]="student.id!"
+                (confirmed)="deleteStudent($event)"
+              >
+              </shared-confirm-dialog-button>
             </td>
           </tr>
         </tbody>

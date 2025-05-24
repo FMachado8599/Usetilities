@@ -1,0 +1,74 @@
+{
+  "courses": [
+    {
+      "id": "1",
+      "name": "Engineering",
+      "field": "Science & Technology",
+      "description": "Focuses on mechanical, electrical, and civil engineering."
+    },
+    {
+      "id": "2",
+      "name": "Humanities",
+      "field": "Arts & Social Sciences",
+      "description": "Covers literature, history, and social studies."
+    },
+    {
+      "id": "3",
+      "name": "Business",
+      "field": "Commerce & Management",
+      "description": "Includes finance, marketing, and management courses."
+    },
+    {
+      "id": "4",
+      "name": "Education",
+      "field": "Teaching & Learning",
+      "description": "Focuses on pedagogy and educational psychology."
+    },
+    {
+      "id": "5",
+      "name": "Health Sciences",
+      "field": "Medicine & Health",
+      "description": "Includes courses in biology, chemistry, and health care."
+    },
+    {
+      "id": "6",
+      "name": "Arts",
+      "field": "Creative Arts",
+      "description": "Covers visual arts, music, and performing arts."
+    },
+    {
+      "id": "7",
+      "name": "Tango",
+      "field": "Danza",
+      "description": "Esta es una clase muy importante folkloricamente hablando"
+    },
+    {
+      "id": "8",
+      "name": "Salsa",
+      "field": "Danza",
+      "description": "El mejor estilo de baile/musica que pueda existir"
+    },
+    {
+      "id": "9",
+      "name": "Merengue",
+      "field": "Danza",
+      "description": "Este es un estilo muy divertido pero no entiendo un joraca como se baila"
+    }
+  ],
+  "students": [
+    {
+      "name": "Facundito",
+      "lastName": "Machadito",
+      "ci": 50041545,
+      "location": "Ayuntamiento",
+      "birth": "1999-05-01",
+      "presenteeism": 100,
+      "online": true,
+      "courses": [
+        "2",
+        "5"
+      ],
+      "id": "ea1e"
+    }
+  ]
+}

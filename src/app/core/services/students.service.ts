@@ -7,43 +7,33 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 
-export class StudentsService {
+export class StudentsService{
 
-  private studentsUrl = 'assets/data/students.json';
-  private _students: Student[] = []
+  private apiUrl = 'http://localhost:1500/students';
 
-  constructor(private http: HttpClient) {
-    this.loadStudents();
-  }
-
-  private loadStudents(): void {
-    this.http.get<Student[]>(this.studentsUrl).subscribe((data) => {
-      this._students = data;
-    });
-  }
+  constructor(private http: HttpClient) {}
 
   getStudents(): Observable<Student[]> {
-  return this.http.get<Student[]>(this.studentsUrl);
+    return this.http.get<Student[]>(this.apiUrl);
   }
-  setStudents(students: Student[]) { 
-    this._students = students;
+
+  getStudentByCi(ci: number): Observable<Student> {
+    return this.http.get<Student>(`${this.apiUrl}?ci=${ci}`);
   }
-  getStudentByCi(ci: number): Student | undefined {
-    return this._students.find(student => student.ci === ci);
+
+  getStudentById(id: string): Observable<Student> {
+    return this.http.get<Student>(`${this.apiUrl}/${id}`);
   }
-  addStudent(student: Student): void {
-    this._students.push(student);
+
+  addStudent(student: Student): Observable<Student> {
+    return this.http.post<Student>(this.apiUrl, student);
   }
-  updateStudent(ci: number, updatedStudent: Student): void {
-    const index = this._students.findIndex(student => student.ci === ci);
-    if (index !== -1) {
-      this._students[index] = { ...this._students[index], ...updatedStudent };
-    }
+
+  updateStudent(student: Student): Observable<Student> {
+    return this.http.put<Student>(`${this.apiUrl}/${student.id}`, student);
   }
-  deleteStudent(ci: number): void {
-    const index = this._students.findIndex(student => student.ci === ci);
-    if (index !== -1) {
-      this._students.splice(index, 1);
-    }
+
+  deleteStudent(id: string): Observable<any> {
+    return this.http.delete(`${this.apiUrl}/${id}`);
   }
 }

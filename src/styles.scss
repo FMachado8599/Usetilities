@@ -107,3 +107,11 @@ p {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+#table-delete-button{
+    width: 16px;
+    cursor: pointer;
+    &:hover{
+        color: #fb4444;
+    }
+}

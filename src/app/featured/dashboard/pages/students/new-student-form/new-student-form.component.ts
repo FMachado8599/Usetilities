@@ -36,25 +36,29 @@ export class NewStudentFormComponent {
     });
   }
 
-  public submit(){
-    if (this.newStudentForm.valid) {
-      const newStudent: Student = {
-        name: this.newStudentForm.value.name,
-        lastName: this.newStudentForm.value.lastName,
-        ci: this.newStudentForm.value.ci,
-        location: this.newStudentForm.value.location,
-        birth: this.newStudentForm.value.birth,
-      };
+  public submit() {
+  if (this.newStudentForm.valid) {
+    const formValue = {
+      ci: this.newStudentForm.value.ci,
+      name: this.newStudentForm.value.name,
+      lastName: this.newStudentForm.value.lastName,
+      location: this.newStudentForm.value.location,
+      birth: this.newStudentForm.value.birth,
+    };
 
-      this.studentsService.addStudent(newStudent); // agregás al servicio
-      console.log("Se creo nuevo estudiante"); // opcional: ver en consola el nuevo estudiante
-      this.submitted.emit(); // Metodo para que el padre sepa que se agregó un nuevo estudiante
-  
-      this.newStudentForm.reset(); // opcional: limpiar el form después de agregar
-    } else {
-      this.newStudentForm.markAllAsTouched(); // opcional: marcar campos en rojo si alguien aprieta "Submit" sin completar
-    }
+    const newStudent: Omit<Student, 'id'> = {
+      ...formValue,
+      courses: [],
+    };
+
+    this.studentsService.addStudent(newStudent).subscribe(() => {
+      this.submitted.emit();
+      this.newStudentForm.reset();
+    });
+  } else {
+    this.newStudentForm.markAllAsTouched();
   }
+}
 
 
   get nameControl(){

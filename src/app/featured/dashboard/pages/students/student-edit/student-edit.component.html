@@ -1,0 +1,114 @@
+<section>
+  <h2>student.name</h2>
+  <form
+    [formGroup]="studentForm"
+    (ngSubmit)="onSubmit()"
+    class="student-edit-form"
+  >
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Avatar URL</mat-label>
+      <input matInput formControlName="avatar" type="text" />
+    </mat-form-field>
+
+    <div>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nombre</mat-label>
+        <input matInput formControlName="name" type="text" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Apellido</mat-label>
+        <input matInput formControlName="lastName" type="text" />
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>CI</mat-label>
+        <input matInput formControlName="ci" type="number" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Ubicación</mat-label>
+        <input matInput formControlName="location" type="text" />
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Score</mat-label>
+        <input matInput formControlName="score" type="number" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Presentismo</mat-label>
+        <input matInput formControlName="presenteeism" type="number" />
+      </mat-form-field>
+    </div>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Fecha de nacimiento</mat-label>
+      <input matInput formControlName="birth" type="date" />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Bio</mat-label>
+      <textarea matInput formControlName="bio" rows="4"></textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Cursos Inscritos</mat-label>
+      <mat-select formControlName="courses" multiple>
+        <mat-option *ngFor="let course of _courses" [value]="course.id">
+          {{ course.name }}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <br />
+    <mat-checkbox formControlName="online">Está en línea</mat-checkbox>
+    <br />
+    <button
+      mat-flat-button
+      color="primary"
+      type="submit"
+      [disabled]="studentForm.invalid"
+    >
+      Guardar Cambios
+    </button>
+  </form>
+  <div>
+    <h2>Cursos inscriptos</h2>
+
+    <table class="table table-dark students-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Curso</th>
+          <th>Área</th>
+          <th>Descripción</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let course of studentCourses">
+          <td>{{ course.id }}</td>
+          <td>{{ course.name }}</td>
+          <td>{{ course.field }}</td>
+          <td>{{ course.description }}</td>
+          <td>
+            <mat-icon
+              class="table-delete-button"
+              src="/assets/svg/trash.svg"
+              alt="Delete"
+              appInlineSvg
+              svgIcon="trash"
+              id="table-delete-button"
+              (click)="removeCourseFromStudent(course.id)"
+            />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

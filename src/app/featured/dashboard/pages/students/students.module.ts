@@ -6,16 +6,18 @@ import { StudentsRoutingModule } from './students-routing.module';
 import { StudentsComponent } from './students.component';
 import { NewStudentFormComponent } from './new-student-form/new-student-form.component';
 import { SharedModule } from '../../../../shared/shared.module';
+import { StudentEditComponent } from './student-edit/student-edit.component';
 
 @NgModule({
   declarations: [
     StudentsComponent,
     NewStudentFormComponent,
+    StudentEditComponent,
   ],
   imports: [
     CommonModule,
     SharedModule,
-    StudentsRoutingModule
+    StudentsRoutingModule,
   ],
   providers: [
     StudentsService,
@@ -23,6 +25,7 @@ import { SharedModule } from '../../../../shared/shared.module';
   ],
     exports: [
     NewStudentFormComponent,
+    StudentEditComponent,
   ]
 })
 export class StudentsModule { }

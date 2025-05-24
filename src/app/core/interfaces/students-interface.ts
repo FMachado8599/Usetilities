@@ -1,4 +1,5 @@
 export interface Student {
+  id?:string;
   ci:number;
   avatar?:string;
   name:string;
@@ -7,7 +8,6 @@ export interface Student {
   score?:number;
   presenteeism?:number;
   courses?:number[];
-  careers?:number[];
   birth?:Date;
   bio?:string;
   online?:boolean;

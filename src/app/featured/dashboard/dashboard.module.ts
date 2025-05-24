@@ -10,6 +10,8 @@ import { SharedModule } from '../../shared/shared.module';
 import { UsersComponent } from './pages/users/users.component';
 import { HomeModule } from './pages/home/home.module';
 import { StudentsModule } from './pages/students/students.module';
+import { CoursesModule } from './pages/courses/courses.module';
+
 
 @NgModule({
   declarations: [
@@ -24,7 +26,7 @@ import { StudentsModule } from './pages/students/students.module';
     SharedModule,
     DashboardRoutingModule,
     StudentsModule,
-    // CoursesModule,
+    CoursesModule,
     HomeModule
   ],
   exports: [

@@ -1,0 +1,71 @@
+.add-course-form{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+    width: 100%;
+    & div{
+        display: flex;
+        flex-direction: row;
+        justify-content: start;
+        gap: 1rem;
+        & div{
+            display: flex;
+            flex-direction: column;
+            justify-content: start;
+            gap: 0px;
+        }
+        & div .form-course-name,div .form-course-field{
+            width: clamp(200px, 100%, 300px);
+        }
+    }
+    & .form-course-description{
+        width: 100%;
+    }
+}
+  td {
+    padding-right: 8px;
+    & .form-error-message {
+      color: hsl(0, 100%, 80%);
+      font-size: 0.8rem;
+      transform: translate(0, -0.7rem);
+    }
+  }
+  mat-form-field {
+    margin-bottom: 0rem;
+    & .mat-mdc-text-field-wrapper {
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 0 !important;
+    }
+    .mat-form-field-wrapper {
+      padding: 0 12px;
+    }
+  
+    .mat-form-field-flex {
+      background-color: #f4f4f4;
+      border-radius: 8px;
+    }
+  
+    input {
+      color: #333;
+      font-weight: 500;
+    }
+  }
+
+.submit-button {
+  background-color: hsl(1deg, 1%, 4%);
+  color: hsl(1deg, 1%, 100%);
+  font-size: 1rem;
+  font-weight: 400;
+  padding: .5rem 2rem;
+  border-radius: .5rem;
+  border: none;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+  max-width: fit-content;
+  &:hover {
+      background-color: hsl(1deg, 1%, 20%);
+      transform: scale(1.05);
+  }
+}

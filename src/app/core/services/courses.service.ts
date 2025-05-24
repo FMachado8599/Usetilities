@@ -9,38 +9,27 @@ import { Observable } from 'rxjs';
 
 export class CoursesService {
 
-  private coursesUrl = 'assets/data/courses.json';
+  private apiUrl = 'http://localhost:1500/courses';
+
   private _courses: Course[] = [];
 
   constructor(private http: HttpClient) {
-    this.loadCourses();
-  }
-
-  private loadCourses(): void {
-    this.http.get<Course[]>(this.coursesUrl).subscribe((data) => {
-      this._courses = data;
-    });
   }
 
   getCourses(): Observable<Course[]> {
-  return this.http.get<Course[]>(this.coursesUrl);
+    return this.http.get<Course[]>(this.apiUrl);
   }
-  getCourseById(id: number): Course | undefined {
-    return this._courses.find(course => course.id === id);
+
+  addCourse( course: Course): Observable<Course[]> {
+    return this.http.post<Course[]>(this.apiUrl, course);
   }
-  addCourse(course: Course): void {
-    this._courses.push(course);
+
+  updateCourse(course: Course): Observable<Course> {
+    return this.http.put<Course>(`${this.apiUrl}/${course.id}`, course);
   }
-  updateCourse(id: number, updatedcourse: Course): void {
-    const index = this._courses.findIndex(course => course.id === id);
-    if (index !== -1) {
-      this._courses[index] = { ...this._courses[index], ...updatedcourse };
-    }
+
+  deleteCourse(id: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
-  deleteCourse(id: number): void {
-    const index = this._courses.findIndex(course => course.id === id);
-    if (index !== -1) {
-      this._courses.splice(index, 1);
-    }
-  }
+
 }

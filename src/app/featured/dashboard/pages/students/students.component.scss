@@ -5,21 +5,31 @@
         flex-direction: row;
         justify-content: space-between;
         width: 100%;
-        & button {
+        & .entity-add-button {
             border: 1px solid transparent;
             border-radius: 999px;
-            padding: .3rem 1rem;
-            max-height: 4rem;
+            padding: .4rem 1rem;
+            max-height: 3rem;
             background-color: hsl(1deg, 1%, 10%);
             color: white;
-            width: 100px;
+            width: auto;
             filter: drop-shadow(0px 3px 5px transparent);
             transition: all .25s ease-in;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
             &:hover{
                 font-weight: 800;
                 border: 1px solid white;
                 filter: drop-shadow(0px 3px 5px hsl(1deg, 1%, 25%));
             }
+            & .add-svg{
+                aspect-ratio: 1/1;
+                // height: 1rem;
+                width: 1.2rem;
+                color: white;
+            }   
         }
     }
 
@@ -65,8 +75,8 @@
                     }
                     & .student-img{
                         aspect-ratio: 1/1;
-                        width: 30px;
-                        height: 30px;
+                        width: 1.2rem;
+                        color: white;
                     }
                 }
             }
@@ -75,21 +85,22 @@
                 font-weight: 400;
                 padding: .8rem;
                 border-bottom: 2px solid hsl(1deg, 1%, 15%);
+                &:has(img){
+                    text-align: center;
+                }
                 & .student-edit{
-                        fill: white;
+                        fill: red;
                         width: 16px;
                         height: 16px;
                         cursor: pointer;
                 }
             }
             & .student-presenteeism{
-
                 & div{
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     border-radius: 99px;
-
                 }
                 & .student-online{
                     color: #10c210;
@@ -107,10 +118,7 @@
                     color: #f2c024;
                     text-shadow: 0px 0px 20px #f2c024;
                 }
-                
             }
-
-
         }
     }
 

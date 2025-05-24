@@ -1,0 +1,67 @@
+.students-table {
+    border-radius: .5rem;
+    overflow:  hidden;
+    padding: 1rem;
+    margin: 0;
+    --bs-table-bg: hsl(210, 11%, 10%);
+    & thead{
+        & tr{
+            & th{
+                padding: 1rem;
+                font-size: 1.2rem;
+                font-weight: 500;
+                color: hsl(1deg, 1%, 100%); 
+                background-color: hsl(1deg, 1%, 4%);
+                border-bottom: 2px solid hsl(1deg, 1%, 20%);
+            }
+        }
+    }
+    & tbody{
+        & tr{
+            & th{
+                padding: .8rem;
+                border-bottom: 2px solid hsl(1deg, 1%, 15%);
+                & div{
+                    display: flex;
+                    align-items: center;
+                    justify-content: start;
+                    & p{
+                        font-size: 14px;
+                        font-weight: 400;
+                        color: hsl(1deg, 1%, 100%); 
+                    }
+                    & .student-img{
+                        aspect-ratio: 1/1;
+                        width: 30px;
+                        height: 30px;
+                    }
+                }
+            }
+            & td{
+                font-size: .9rem;
+                font-weight: 400;
+                padding: .8rem;
+                border-bottom: 2px solid hsl(1deg, 1%, 15%);
+                vertical-align: middle;
+                // & .table-delete-button{
+                //                         color: white;
+                //     fill: white;
+                //     width: 16px;
+                // }
+                & .student-edit{
+                        fill: red;
+                        width: 16px;
+                        height: 16px;
+                        cursor: pointer;
+                    & svg{
+                        fill: red;
+                    }
+                }
+            }
+        }
+    }
+
+    & *{
+        background-color: hsl(1deg, 1%, 6%);
+    }
+}

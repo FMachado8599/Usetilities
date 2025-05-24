@@ -22,12 +22,7 @@ export class CoursesComponent implements OnInit {
     });
   }
 
-  getCourseName(id: number): string {
-    const course = this.courses.find(c => c.id === id);
-    return course ? course.name : 'N/A';
-  }
-
-  // SHOW-HIDE Form------------------------//
+  //------------------------SHOW-HIDE Form------------------------//
   showForm: boolean = false;
 
   onAddCourse() {

@@ -1,12 +1,15 @@
 <div class="section-container">
-  <!-- <app-new-course-form
+  <dahsboard-new-course-form
     *ngIf="showForm"
     (submitted)="onFormSubmitted()"
-  ></app-new-course-form> -->
+    class="add-course-form-container"
+  ></dahsboard-new-course-form>
 
   <div class="section-options">
     <h1 class="main-component-title">Courses</h1>
-    <button (click)="onAddCourse()">+ Add</button>
+    <button *ngIf="!showForm" (click)="onAddCourse()">
+      + <img src="/assets/svg/avatar.svg" alt="" />
+    </button>
   </div>
 
   <section class="student-section component-gral">
@@ -14,19 +17,22 @@
       <table class="table table-dark students-table">
         <thead>
           <tr>
+            <th scope="col">ID</th>
             <th scope="col">Course</th>
             <th scope="col">Field</th>
             <th scope="col">Description</th>
-            <th scope="col">Edit</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let course of courses">
-            <th scope="row">
-              <div class="d-flex flex-row gap-3">
-                <p>{{ course.name }}</p>
-              </div>
-            </th>
+            <td scope="row">
+              {{ course.id }}
+            </td>
+            <td>
+              {{ course.name }}
+            </td>
             <td>
               {{ course.field }}
             </td>
@@ -38,6 +44,14 @@
                 class="student-edit"
                 src="/assets/png/edit_white.png"
                 alt="Edit"
+              />
+            </td>
+            <td>
+              <img
+                class="table-delete-button"
+                src="/assets/svg/trash.svg"
+                alt="Delete"
+                appInlineSvg
               />
             </td>
           </tr>
