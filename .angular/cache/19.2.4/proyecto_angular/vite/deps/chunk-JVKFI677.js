@@ -1,7 +1,4 @@
 import {
-  BidiModule
-} from "./chunk-FTNJM2XY.js";
-import {
   _CdkPrivateStyleLoader,
   _bindEventWithOptions
 } from "./chunk-ZXHNGQOV.js";
@@ -10,6 +7,9 @@ import {
   coerceElement,
   coerceNumberProperty
 } from "./chunk-NWYYG6UV.js";
+import {
+  BidiModule
+} from "./chunk-FTNJM2XY.js";
 import {
   DOCUMENT
 } from "./chunk-Y47R2XOK.js";
@@ -65,6 +65,15 @@ import {
 import {
   __spreadValues
 } from "./chunk-EPAV4CNQ.js";
+
+// node_modules/@angular/cdk/fesm2022/fake-event-detection-D0_6qVp2.mjs
+function isFakeMousedownFromScreenReader(event) {
+  return event.buttons === 0 || event.detail === 0;
+}
+function isFakeTouchstartFromScreenReader(event) {
+  const touch = event.touches && event.touches[0] || event.changedTouches && event.changedTouches[0];
+  return !!touch && touch.identifier === -1 && (touch.radiusX == null || touch.radiusX === 1) && (touch.radiusY == null || touch.radiusY === 1);
+}
 
 // node_modules/@angular/cdk/fesm2022/keycodes-DPWmI2Ix.mjs
 var BACKSPACE = 8;
@@ -122,15 +131,6 @@ function _getFocusedElementPierceShadowDom() {
 }
 function _getEventTarget(event) {
   return event.composedPath ? event.composedPath()[0] : event.target;
-}
-
-// node_modules/@angular/cdk/fesm2022/fake-event-detection-D0_6qVp2.mjs
-function isFakeMousedownFromScreenReader(event) {
-  return event.buttons === 0 || event.detail === 0;
-}
-function isFakeTouchstartFromScreenReader(event) {
-  const touch = event.touches && event.touches[0] || event.changedTouches && event.changedTouches[0];
-  return !!touch && touch.identifier === -1 && (touch.radiusX == null || touch.radiusX === 1) && (touch.radiusY == null || touch.radiusY === 1);
 }
 
 // node_modules/@angular/cdk/fesm2022/passive-listeners-ZmZRMx8D.mjs
@@ -2380,6 +2380,25 @@ var ListKeyManager = class {
   }
 };
 
+// node_modules/@angular/cdk/fesm2022/focus-key-manager-DgyxYbV2.mjs
+var FocusKeyManager = class extends ListKeyManager {
+  _origin = "program";
+  /**
+   * Sets the focus origin that will be passed in to the items for any subsequent `focus` calls.
+   * @param origin Focus origin to be used when focusing items.
+   */
+  setFocusOrigin(origin) {
+    this._origin = origin;
+    return this;
+  }
+  setActiveItem(item) {
+    super.setActiveItem(item);
+    if (this.activeItem) {
+      this.activeItem.focus(this._origin);
+    }
+  }
+};
+
 // node_modules/@angular/cdk/fesm2022/activedescendant-key-manager-BYiHZAZc.mjs
 var ActiveDescendantKeyManager = class extends ListKeyManager {
   setActiveItem(index) {
@@ -3144,9 +3163,10 @@ export {
   _IdGenerator,
   hasModifierKey,
   ActiveDescendantKeyManager,
+  FocusKeyManager,
   addAriaReferencedId,
   removeAriaReferencedId,
   MATERIAL_SANITY_CHECKS,
   MatCommonModule
 };
-//# sourceMappingURL=chunk-YFAQJOQO.js.map
+//# sourceMappingURL=chunk-JVKFI677.js.map

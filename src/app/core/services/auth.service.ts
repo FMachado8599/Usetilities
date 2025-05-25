@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { User } from '../../featured/auth/interfaces/loginUser';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -9,7 +10,7 @@ export class AuthService {
 
   private isAuth: boolean = false;
 
-  constructor() {
+  constructor(private router: Router) {
     const userData = localStorage.getItem('authUser');
     const authStatus = localStorage.getItem('isAuth');
 
@@ -43,6 +44,7 @@ export class AuthService {
     this.isAuth = false;
     localStorage.removeItem('authUser');
     localStorage.removeItem('isAuth');
+    this.router.navigate(['/auth/login']);
   }
 
   isLogged(): boolean {

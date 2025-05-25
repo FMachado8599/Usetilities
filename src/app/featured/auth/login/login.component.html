@@ -1,5 +1,4 @@
 <section>
-  <h1>Login</h1>
   <mat-card>
     <mat-card-title>Login</mat-card-title>
     <form [formGroup]="loginForm" (ngSubmit)="submit()">
@@ -12,6 +11,8 @@
           <mat-label>Password</mat-label>
           <input matInput type="password" formControlName="password" />
         </mat-form-field>
+
+        <p>¿No tenés cuenta? <a routerLink="/register">Registrate acá</a></p>
 
         <button mat-flat-button type="submit">Login</button>
       </div>

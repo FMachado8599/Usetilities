@@ -11,9 +11,10 @@ import { ConfirmDialogComponent } from './components/confirm-dialog/confirm-dial
 import { MatDialogModule } from '@angular/material/dialog';
 import { ConfirmDialogButtonComponent } from './components/confirm-dialog-button/confirm-dialog-button.component';
 import { MatOption, MatOptionModule } from '@angular/material/core';
-import { MatCheckbox, MatCheckboxModule } from '@angular/material/checkbox';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIcon } from '@angular/material/icon';
+import { MatMenuModule } from '@angular/material/menu';
 
 
 @NgModule({
@@ -34,6 +35,8 @@ import { MatIcon } from '@angular/material/icon';
         MatOption,
         MatCheckboxModule,
         MatSelectModule,
+        MatButtonModule,
+        MatMenuModule,
         IconsModule,
         MatIcon,
   ],
@@ -50,6 +53,8 @@ import { MatIcon } from '@angular/material/icon';
         MatOption,
         MatCheckboxModule,
         MatSelectModule,
+        MatButtonModule,
+        MatMenuModule,
         IconsModule,
         ConfirmDialogComponent,
         ConfirmDialogButtonComponent,

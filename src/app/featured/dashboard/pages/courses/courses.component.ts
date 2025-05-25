@@ -45,6 +45,9 @@ export class CoursesComponent implements OnInit {
 
   onFormSubmitted() {
     this.showForm = false;
+        setTimeout(() => {
+      this.loadCourses();
+    }, 500);
   }
   onCancelled(){
     this.showForm = false

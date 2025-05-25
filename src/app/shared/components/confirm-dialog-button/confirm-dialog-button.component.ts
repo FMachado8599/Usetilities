@@ -22,8 +22,10 @@ export class ConfirmDialogButtonComponent {
   openDialog() {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: { 
-        title: '¿Are you sure?', 
-        message: `You are about to delete ${this.entityName}?` 
+        title: 'Are you sure?', 
+        message: `You are about to delete ${this.entityName}?`,
+        negative: 'Cancel',
+        positive:'Delete',
       }
     });
 

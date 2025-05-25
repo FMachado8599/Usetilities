@@ -1,0 +1,60 @@
+<section>
+  <mat-card>
+    <mat-card-title>Register</mat-card-title>
+    <form [formGroup]="registerForm" (ngSubmit)="submit()">
+      <div>
+        <mat-form-field>
+          <mat-label>Username</mat-label>
+          <input matInput type="username" formControlName="username" />
+          <div
+            *ngIf="
+              registerForm.get('username')?.touched &&
+              registerForm.get('username')?.invalid
+            "
+          >
+            El nombre es obligatorio.
+          </div>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Email</mat-label>
+          <input matInput type="email" formControlName="email" />
+          <div
+            *ngIf="
+              registerForm.get('email')?.touched &&
+              registerForm.get('email')?.invalid
+            "
+          >
+            Email inválido.
+          </div>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password" />
+          <div
+            *ngIf="
+              registerForm.get('password')?.touched &&
+              registerForm.get('password')?.invalid
+            "
+          >
+            La contraseña es obligatoria.
+          </div>
+        </mat-form-field>
+        <mat-form-field>
+          <mat-label>Confirm Password</mat-label>
+          <input
+            matInput
+            type="confirm-password"
+            formControlName="confirm-password"
+          />
+        </mat-form-field>
+
+        <mat-checkbox class="checkbox" formControlName="isAdmin"
+          >Es admin?</mat-checkbox
+        >
+
+        <button mat-flat-button type="submit">Register</button>
+      </div>
+    </form>
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </mat-card>
+</section>

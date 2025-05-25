@@ -5,11 +5,11 @@ import {
   MatLabel,
   MatPrefix,
   MatSuffix
-} from "./chunk-WGT3NGUM.js";
+} from "./chunk-NHMTACSZ.js";
 import {
   MatCommonModule,
   ObserversModule
-} from "./chunk-YFAQJOQO.js";
+} from "./chunk-JVKFI677.js";
 import {
   NgModule,
   setClassMetadata,
@@ -44,4 +44,4 @@ var MatFormFieldModule = class _MatFormFieldModule {
 export {
   MatFormFieldModule
 };
-//# sourceMappingURL=chunk-6GTCUHRZ.js.map
+//# sourceMappingURL=chunk-B5A4YS6G.js.map

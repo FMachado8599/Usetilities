@@ -11,6 +11,7 @@ import { UsersComponent } from './pages/users/users.component';
 import { HomeModule } from './pages/home/home.module';
 import { StudentsModule } from './pages/students/students.module';
 import { CoursesModule } from './pages/courses/courses.module';
+import { LogoutComponent } from './components/header/logout/logout.component';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { CoursesModule } from './pages/courses/courses.module';
     HeaderComponent,
     NavbarComponent,
     UsersComponent,
+    LogoutComponent,
   ],
   imports: [
     CommonModule,
