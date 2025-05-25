@@ -87,7 +87,6 @@
           <th>Curso</th>
           <th>Área</th>
           <th>Descripción</th>
-          <th></th>
         </tr>
       </thead>
       <tbody>
@@ -96,7 +95,7 @@
           <td>{{ course.name }}</td>
           <td>{{ course.field }}</td>
           <td>{{ course.description }}</td>
-          <td>
+          <!-- <td>
             <mat-icon
               class="table-delete-button"
               src="/assets/svg/trash.svg"
@@ -106,7 +105,7 @@
               id="table-delete-button"
               (click)="removeCourseFromStudent(course.id)"
             />
-          </td>
+          </td> -->
         </tr>
       </tbody>
     </table>

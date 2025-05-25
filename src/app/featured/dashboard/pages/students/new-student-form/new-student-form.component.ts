@@ -20,6 +20,7 @@ import { Student } from '../../../../../core/interfaces/students-interface';
 export class NewStudentFormComponent {
 
   @Output() submitted = new EventEmitter<void>();
+  @Output() cancelled = new EventEmitter<void>();
 
   public newStudentForm: FormGroup;
 
@@ -59,6 +60,11 @@ export class NewStudentFormComponent {
     this.newStudentForm.markAllAsTouched();
   }
 }
+
+  onCancelled(){
+    this.newStudentForm.reset();
+    this.cancelled.emit();
+  }
 
 
   get nameControl(){

@@ -1,10 +1,10 @@
 {
   "courses": [
     {
-      "id": "1",
       "name": "Engineering",
       "field": "Science & Technology",
-      "description": "Focuses on mechanical, electrical, and civil engineering."
+      "description": "Focuses on mechainca, computing and civil engeneering, Just kidding. We play minecraft",
+      "id": "1"
     },
     {
       "id": "2",
@@ -47,12 +47,6 @@
       "name": "Salsa",
       "field": "Danza",
       "description": "El mejor estilo de baile/musica que pueda existir"
-    },
-    {
-      "id": "9",
-      "name": "Merengue",
-      "field": "Danza",
-      "description": "Este es un estilo muy divertido pero no entiendo un joraca como se baila"
     }
   ],
   "students": [
@@ -61,8 +55,9 @@
       "lastName": "Machadito",
       "ci": 50041545,
       "location": "Ayuntamiento",
-      "birth": "1999-05-01",
+      "birth": "1999-04-30",
       "presenteeism": 100,
+      "bio": "Alo esto es una prueba para ver si se guarda la bio gracias y hasta luego",
       "online": true,
       "courses": [
         "2",

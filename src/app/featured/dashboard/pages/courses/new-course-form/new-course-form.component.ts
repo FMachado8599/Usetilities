@@ -16,6 +16,7 @@ import { Course } from '../../../../../core/interfaces/courses-interface';
 export class NewCourseFormComponent {
 
   @Output() submitted = new EventEmitter<void>();
+  @Output() cancelled = new EventEmitter<void>();
 
   public newCourseForm: FormGroup;
 
@@ -52,7 +53,11 @@ export class NewCourseFormComponent {
       });
     }
   }
-
+  
+  onCancelled(){
+    this.newCourseForm.reset();
+    this.cancelled.emit();
+  }
 
   get nameControl(){
     return this.newCourseForm.get('name');

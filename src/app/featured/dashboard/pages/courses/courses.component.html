@@ -2,6 +2,7 @@
   <dahsboard-new-course-form
     *ngIf="showForm"
     (submitted)="onFormSubmitted()"
+    (cancelled)="onCancelled()"
     class="add-course-form-container"
   ></dahsboard-new-course-form>
 
@@ -44,15 +45,17 @@
                 class="student-edit"
                 src="/assets/png/edit_white.png"
                 alt="Edit"
+                [routerLink]="[course.id]"
+                aria-label="Editar curso"
               />
             </td>
             <td>
-              <img
-                class="table-delete-button"
-                src="/assets/svg/trash.svg"
-                alt="Delete"
-                appInlineSvg
-              />
+              <shared-confirm-dialog-button
+                [entityName]="course.name"
+                [courseId]="course.id!"
+                (confirmed_course)="deleteCourse($event)"
+              >
+              </shared-confirm-dialog-button>
             </td>
           </tr>
         </tbody>

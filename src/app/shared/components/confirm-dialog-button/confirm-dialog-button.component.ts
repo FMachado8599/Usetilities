@@ -15,19 +15,23 @@ export class ConfirmDialogButtonComponent {
 
   @Input() entityName: string = '';
   @Input() studentId!: string;
+  @Input() courseId!: number
   @Output() confirmed = new EventEmitter<string>();
+  @Output() confirmed_course = new EventEmitter<number>();
 
   openDialog() {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
       data: { 
-        title: '¿Estas Seguro?', 
-        message: `Estas por eliminar ${'a ' + this.entityName}?` 
+        title: '¿Are you sure?', 
+        message: `You are about to delete ${this.entityName}?` 
       }
     });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result === true) {
+        console.log('Emitido ID:', this.courseId);
         this.confirmed.emit(this.studentId);
+        this.confirmed_course.emit(this.courseId)
       } else {
         console.log('Usuario canceló');
       }

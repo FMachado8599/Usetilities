@@ -22,6 +22,20 @@ export class CoursesComponent implements OnInit {
     });
   }
 
+  loadCourses() {
+    this.coursesService.getCourses().subscribe(courses => {
+      this.courses = courses;
+    });
+  }
+
+  deleteCourse(courseId: number) {
+    this.coursesService.deleteCourse(courseId).subscribe(() => {
+      this.loadCourses();
+    }, error => {
+      console.error('Error al eliminar curso:', error);
+    });
+  }
+
   //------------------------SHOW-HIDE Form------------------------//
   showForm: boolean = false;
 
@@ -31,6 +45,9 @@ export class CoursesComponent implements OnInit {
 
   onFormSubmitted() {
     this.showForm = false;
+  }
+  onCancelled(){
+    this.showForm = false
   }
 
 }

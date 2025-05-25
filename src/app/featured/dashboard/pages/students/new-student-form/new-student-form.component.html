@@ -104,7 +104,19 @@
       </td>
     </tr>
   </table>
-  <button mat-raised-button class="submit-button" type="submit" >Submit</button>
+    <div>
+    <button
+      mat-stoked-button
+      class="submit-button"
+      type="button"
+      (click)="onCancelled()"
+    >
+      Cancel
+    </button>
+    <button mat-raised-button class="submit-button" type="submit">
+      Submit
+    </button>
+  </div>
   <!-- @if (newStudent){
     <div class="form-error-message">
       <span>Student created successfully</span>

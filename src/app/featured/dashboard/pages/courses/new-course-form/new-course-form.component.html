@@ -1,4 +1,4 @@
-<h2>Add Sudent</h2>
+<h2>Add Course</h2>
 <form class="add-course-form" [formGroup]="newCourseForm" (ngSubmit)="submit()">
   <div>
     <div>
@@ -60,5 +60,17 @@
       formControlName="description"
     ></textarea>
   </mat-form-field>
-  <button mat-raised-button class="submit-button" type="submit">Submit</button>
+  <div>
+    <button
+      mat-stoked-button
+      class="submit-button"
+      type="button"
+      (click)="onCancelled()"
+    >
+      Cancel
+    </button>
+    <button mat-raised-button class="submit-button" type="submit">
+      Submit
+    </button>
+  </div>
 </form>

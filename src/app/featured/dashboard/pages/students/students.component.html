@@ -2,6 +2,7 @@
   <app-new-student-form
     *ngIf="showForm"
     (submitted)="onFormSubmitted()"
+    (cancelled)="onCancelled()"
   ></app-new-student-form>
   <div class="section-options">
     <h1 class="main-component-title">Students</h1>

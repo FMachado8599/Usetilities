@@ -74,5 +74,8 @@ export class StudentsComponent implements OnInit {
       this.loadStudents(); // esperar antes de pedir de nuevo
     }, 500);
   }
+  onCancelled(){
+    this.showForm = false;
+  }
 
 }

@@ -1,0 +1,43 @@
+<h2>Edit {{ course?.name || "course" }}</h2>
+<form
+  class="add-course-form"
+  [formGroup]="editCourseForm"
+  (ngSubmit)="onSubmit()"
+>
+  <div>
+    <mat-form-field class="form-course-name">
+      <mat-label>Course Name</mat-label>
+      <input
+        matInput
+        placeholder="Course Name"
+        type="text"
+        formControlName="name"
+      />
+    </mat-form-field>
+    <mat-form-field class="form-course-field">
+      <mat-label></mat-label>
+      <input matInput placeholder="Field" type="text" formControlName="field" />
+    </mat-form-field>
+  </div>
+  <mat-form-field class="form-course-description" aria-placeholder="Alo">
+    <mat-label>Description</mat-label>
+    <textarea
+      matInput
+      placeholder="This is a very important field to the world security and peace"
+      formControlName="description"
+    ></textarea>
+  </mat-form-field>
+  <div>
+    <button
+      mat-stoked-button
+      class="submit-button"
+      type="button"
+      (click)="onCancelled()"
+    >
+      Cancel
+    </button>
+    <button mat-raised-button class="submit-button" type="submit">
+      Submit
+    </button>
+  </div>
+</form>

@@ -5,10 +5,12 @@ import { NewCourseFormComponent } from './new-course-form/new-course-form.compon
 import { SharedModule } from '../../../../shared/shared.module';
 import { CoursesService } from '../../../../core/services/courses.service';
 import { MAT_FORM_FIELD_DEFAULT_OPTIONS } from '@angular/material/form-field';
+import { CourseEditComponent } from './course-edit/course-edit.component';
 
 @NgModule({
   declarations: [
-    NewCourseFormComponent
+    NewCourseFormComponent,
+    CourseEditComponent
   ],
   imports: [
     CommonModule,
