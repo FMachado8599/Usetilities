@@ -43,13 +43,13 @@
       "description": "Esta es una clase muy importante folkloricamente hablando"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Salsa",
       "field": "Danza",
       "description": "El mejor estilo de baile del mundo"
     },
     {
-      "id": 9,
+      "id": "9",
       "name": "Merengue",
       "field": "Danza",
       "description": "Divertido, muy divertido (y rico)"
@@ -74,10 +74,24 @@
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "sickzoid",
       "email": "f.machado5899@gmail.com",
       "password": "el+kpo",
+      "isAdmin": true
+    },
+    {
+      "id": "e186",
+      "username": "profe",
+      "email": "profe@gmail.com",
+      "password": "profe123",
+      "isAdmin": true
+    },
+    {
+      "id": "c558",
+      "username": "valen",
+      "email": "valen@gmail.com",
+      "password": "valen123",
       "isAdmin": true
     }
   ]

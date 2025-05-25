@@ -22,17 +22,19 @@ export class LoginComponent {
       email: ['', [Validators.required, Validators.email]],
       password: ['',[Validators.required, Validators.minLength(3)]],
     });
-    console.log('Formulario inicializado:', this.loginForm);
   }
-  submit(){
+  submit() {
     if (this.loginForm.valid) {
-      console.log('Submit ejecutado', this.loginForm.value);
-      const {email, password } = this.loginForm.value;
-  
-      const logged = this.authService.login(email, password);
-      if (logged) {
-        this.router.navigate(['/dashboard']);
-      }
+      const { email, password } = this.loginForm.value;
+
+      this.authService.login(email, password).subscribe((logged: boolean) => {
+          console.log('¿Login exitoso?', logged);
+        if (logged) {
+          this.router.navigate(['/dashboard']);
+        } else {
+          alert('Usuario o contraseña incorrectos');
+        }
+      });
     }
   }
 }

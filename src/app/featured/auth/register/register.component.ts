@@ -31,25 +31,12 @@ export class RegisterComponent implements OnInit {
     });
   }
 
-  
-
   submit() {
-    if (this.registerForm.valid) {
-      const newUser: User = {
-        ...this.registerForm.value,
-        isAdmin: false,
-      };
+    if (this.registerForm.invalid) return;
 
-      this.userService.registerUser(newUser).subscribe({
-        next: () => {
-          this.router.navigate(['/login']);
-        },
-        error: () => {
-          this.errorMessage = 'Ocurrió un error al registrar el usuario.';
-        }
-      });
-    } else {
-      this.registerForm.markAllAsTouched();
-    }
+    this.userService.registerUser(this.registerForm.value).subscribe({
+      next: () => this.router.navigate(['/login']),
+      error: err => console.error(err),
+    });
   }
 }

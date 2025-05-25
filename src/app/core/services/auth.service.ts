@@ -1,6 +1,9 @@
 import { Injectable } from '@angular/core';
-import { User } from '../../featured/auth/interfaces/loginUser';
+import { User } from '../../core/interfaces/users-interface';
 import { Router } from '@angular/router';
+import { UsersService } from './users.service';
+import { Observable } from 'rxjs';
+import { map } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +13,7 @@ export class AuthService {
 
   private isAuth: boolean = false;
 
-  constructor(private router: Router) {
+  constructor(private usersService: UsersService, private router: Router) {
     const userData = localStorage.getItem('authUser');
     const authStatus = localStorage.getItem('isAuth');
 
@@ -20,34 +23,33 @@ export class AuthService {
   }
   }
 
-  login(email: string, password: string): boolean {
-    if (email !== 'profe@auth.com.uy' || password !== 'pass') {
-      return false;
-    }
+  login(email: string, password: string): Observable<boolean> {
+    return this.usersService.getUserByEmailAndPassword(email, password).pipe(
 
-    this.authUser = {
-      email,
-      password,
-      isadmin: true,
-    };
-
-    localStorage.setItem('authUser', JSON.stringify(this.authUser));
-    localStorage.setItem('isAuth', 'true');
-
-    this.isAuth = true;
-
-    return true;
-  }
+    map(users => {
+      const user = users[0];
+      if (user) {
+        this.authUser = user;
+        this.isAuth = true;
+        localStorage.setItem('authUser', JSON.stringify(user));
+        localStorage.setItem('isAuth', 'true');
+        return true;
+      } else {
+        return false;
+      }
+    })
+  );
+}
 
   logout() : void {
     this.authUser = null;
     this.isAuth = false;
     localStorage.removeItem('authUser');
     localStorage.removeItem('isAuth');
-    this.router.navigate(['/auth/login']);
+    this.router.navigate(['auth']);
   }
 
   isLogged(): boolean {
-    return this.isAuth;
+    return !!localStorage.getItem('isAuth');
   }
 }

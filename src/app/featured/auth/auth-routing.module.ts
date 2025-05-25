@@ -2,20 +2,18 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { AuthComponent } from './auth.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LoginComponent,
+    component: AuthComponent,
+        children: [
+      { path: 'login', component: LoginComponent },
+      { path: 'register', component: RegisterComponent },
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
+    ],
   },
-  {
-    path: '**',
-    redirectTo: '', // Redirige a la página de inicio si la ruta no coincide con ninguna de las anteriores
-  },
-  {
-    path: 'register',
-    component: RegisterComponent,
-  }
 ];
 
 @NgModule({
