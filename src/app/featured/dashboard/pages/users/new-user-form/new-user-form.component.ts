@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { UsersService } from '../../../../../core/services/users.service';
 import { User } from '../../../../../core/interfaces/users-interface';
+import { CustomValidators } from '../../../../../utils/custom-validators';
 
 @Component({
   selector: 'dashboard-new-user-form',
@@ -19,7 +20,7 @@ export class NewUserFormComponent {
   constructor(private fb: FormBuilder, private usersService: UsersService) {
     this.newUserForm = this.fb.group({
       username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
-      password: ['', [Validators.required, Validators.minLength(8)]],
+      password: ['', [Validators.required, CustomValidators.strongPassword]],
       email: ['', [Validators.required, Validators.email]],
       isAdmin: [false]
     });
@@ -32,7 +33,7 @@ export class NewUserFormComponent {
         const newUser: User = {
           id: maxId + 1,
           username: this.newUserForm.value.username,
-          password: 'defaultPassword',
+          password: this.newUserForm.value.password,
           email: this.newUserForm.value.email,
           isAdmin: this.newUserForm.value.isAdmin
         };
@@ -61,5 +62,11 @@ export class NewUserFormComponent {
   }
   get isEmailInvalid(){
     return this.emailControl?.touched && this.emailControl?.invalid;
+  }
+  get passwordControl(){
+    return this.newUserForm.get('password');
+  }
+  get isPasswordInvalid(){
+    return this.passwordControl?.touched && this.passwordControl?.errors?.['stongPassword'];
   }
 }

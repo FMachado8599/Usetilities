@@ -25,6 +25,7 @@ export class IconsModule {
         { name: 'student', path: 'assets/svg/student.svg' },
         { name: 'teachers', path: 'assets/svg/teachers.svg' },
         { name: 'trash', path: 'assets/svg/trash.svg' },
+        { name: 'info', path: 'assets/svg/info-circle.svg' },
     ];
 
     icons.forEach(icon => {

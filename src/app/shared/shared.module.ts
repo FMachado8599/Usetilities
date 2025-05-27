@@ -15,6 +15,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSelectModule } from '@angular/material/select';
 import { MatIcon } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -39,6 +40,7 @@ import { MatMenuModule } from '@angular/material/menu';
         MatMenuModule,
         IconsModule,
         MatIcon,
+        MatTooltipModule,
   ],
   exports: [
         FormsModule,
@@ -59,6 +61,7 @@ import { MatMenuModule } from '@angular/material/menu';
         ConfirmDialogComponent,
         ConfirmDialogButtonComponent,
         MatIcon,
+        MatTooltipModule
   ],
   providers: [
         {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'fill'}}

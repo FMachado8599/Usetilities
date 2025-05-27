@@ -1,15 +1,15 @@
 import {
+  BidiModule
+} from "./chunk-GZGE2D4A.js";
+import {
   _CdkPrivateStyleLoader,
   _bindEventWithOptions
-} from "./chunk-Y4R66NSF.js";
+} from "./chunk-LDKPGNI5.js";
 import {
   Platform,
   coerceElement,
   coerceNumberProperty
 } from "./chunk-M6JNG6DK.js";
-import {
-  BidiModule
-} from "./chunk-GZGE2D4A.js";
 import {
   DOCUMENT
 } from "./chunk-7TTQRRV5.js";
@@ -3170,7 +3170,8 @@ export {
   FocusKeyManager,
   addAriaReferencedId,
   removeAriaReferencedId,
+  AriaDescriber,
   MATERIAL_SANITY_CHECKS,
   MatCommonModule
 };
-//# sourceMappingURL=chunk-LXF2ODPH.js.map
+//# sourceMappingURL=chunk-A6THAR4O.js.map

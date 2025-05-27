@@ -1,9 +1,9 @@
 import { Component, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { correctCI } from '../../../../../utils/custom-validators';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { StudentsService } from '../../../../../core/services/students.service';
 import { Student } from '../../../../../core/interfaces/students-interface';
+import { CustomValidators } from '../../../../../utils/custom-validators';
 
 
 @Component({
@@ -31,7 +31,7 @@ export class NewStudentFormComponent {
     this.newStudentForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
       lastName: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(20)]],
-      ci: [null, [Validators.required, correctCI]],
+      ci: [null, [Validators.required, CustomValidators.correctCI]],
       location: [''],
       birth: [null, [Validators.required]],
     });
