@@ -7,20 +7,18 @@ import { DashboardComponent } from './dashboard.component';
 import { HeaderComponent } from './components/header/header.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SharedModule } from '../../shared/shared.module';
-import { UsersComponent } from './pages/users/users.component';
 import { HomeModule } from './pages/home/home.module';
 import { StudentsModule } from './pages/students/students.module';
 import { CoursesModule } from './pages/courses/courses.module';
 import { LogoutComponent } from './components/header/logout/logout.component';
+import { UsersModule } from './pages/users/users.module';
 
 
 @NgModule({
   declarations: [
-    CoursesComponent,
     DashboardComponent,
     HeaderComponent,
     NavbarComponent,
-    UsersComponent,
     LogoutComponent,
   ],
   imports: [
@@ -29,6 +27,7 @@ import { LogoutComponent } from './components/header/logout/logout.component';
     DashboardRoutingModule,
     StudentsModule,
     CoursesModule,
+    UsersModule,
     HomeModule
   ],
   exports: [
@@ -37,7 +36,6 @@ import { LogoutComponent } from './components/header/logout/logout.component';
     NavbarComponent,
     CoursesComponent,
     StudentsModule,
-    UsersComponent,
   ],
   providers: [],
 

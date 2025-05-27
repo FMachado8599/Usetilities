@@ -12,7 +12,7 @@ export class CoursesComponent implements OnInit {
 
   constructor(
     private coursesService: CoursesService,
-  ) {}
+  ) {};
 
   public courses: Course[] = [];
 
@@ -32,7 +32,7 @@ export class CoursesComponent implements OnInit {
     this.coursesService.deleteCourse(courseId).subscribe(() => {
       this.loadCourses();
     }, error => {
-      console.error('Error al eliminar curso:', error);
+      console.error('Error al eliminar CURSO:', error);
     });
   }
 

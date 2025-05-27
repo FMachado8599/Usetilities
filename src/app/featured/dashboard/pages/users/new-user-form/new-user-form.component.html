@@ -1,0 +1,32 @@
+<h2>Add User</h2>
+<form class="add-entity-form" [formGroup]="newUserForm" (ngSubmit)="submit()">
+  <div>
+    <div>
+      <mat-form-field class="form-course-name">
+        <mat-label>Course Name</mat-label>
+        <input
+          matInput
+          placeholder="Course Name"
+          type="text"
+          formControlName="name"
+        />
+      </mat-form-field>
+      @if (isUsernameInvalid) {
+      <div class="form-error-message">
+        @if (usernameControl?.hasError('required')) {
+        <span>A name is required</span>
+        }@else if (usernameControl?.hasError('minlength')) {
+        <span>Name must have 3 characters</span>
+        }@else if (usernameControl?.hasError('maxlength')) {
+        <span>Name must have less than 20 characters</span>
+        }
+      </div>
+      } @else {
+      <div class="form-error-message">
+        <span style="color: transparent">Nothing wrong</span>
+      </div>
+      }
+    </div>
+    <div></div>
+  </div>
+</form>

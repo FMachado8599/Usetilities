@@ -11,8 +11,6 @@ export class CoursesService {
 
   private apiUrl = 'http://localhost:1500/courses';
 
-  private _courses: Course[] = [];
-
   constructor(private http: HttpClient) {
   }
 

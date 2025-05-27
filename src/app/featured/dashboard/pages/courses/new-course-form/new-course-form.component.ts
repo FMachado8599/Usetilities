@@ -5,7 +5,7 @@ import { CoursesService } from '../../../../../core/services/courses.service';
 import { Course } from '../../../../../core/interfaces/courses-interface';
 
 @Component({
-  selector: 'dahsboard-new-course-form',
+  selector: 'dashboard-new-course-form',
   standalone: false,
   templateUrl: './new-course-form.component.html',
   styleUrl: './new-course-form.component.scss',

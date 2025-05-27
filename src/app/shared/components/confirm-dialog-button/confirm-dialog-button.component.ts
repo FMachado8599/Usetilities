@@ -15,9 +15,11 @@ export class ConfirmDialogButtonComponent {
 
   @Input() entityName: string = '';
   @Input() studentId!: string;
-  @Input() courseId!: number
+  @Input() courseId!: number;
+  @Input() userId!: number;
   @Output() confirmed = new EventEmitter<string>();
   @Output() confirmed_course = new EventEmitter<number>();
+  @Output() confirmed_user = new EventEmitter<number>();
 
   openDialog() {
     const dialogRef = this.dialog.open(ConfirmDialogComponent, {
@@ -34,6 +36,7 @@ export class ConfirmDialogButtonComponent {
         console.log('Emitido ID:', this.courseId);
         this.confirmed.emit(this.studentId);
         this.confirmed_course.emit(this.courseId)
+        this.confirmed_user.emit(this.userId)
       } else {
         console.log('Usuario canceló');
       }
