@@ -17,7 +17,7 @@ export class CustomValidators {
 
         const passwordValid = hasLowerCase && hasUpperCase && hasNumber && hasSpecialCharacter;
 
-        return passwordValid ? null : { stongPassword: {
+        return passwordValid ? null : { strongPassword: {
                 hasUpperCase,
                 hasLowerCase,
                 hasNumber,

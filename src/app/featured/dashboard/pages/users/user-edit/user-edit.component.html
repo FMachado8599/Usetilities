@@ -63,29 +63,6 @@
             formControlName="password"
           />
         </mat-form-field>
-        @if (isPasswordInvalid) {
-        <div class="form-error-message">
-          @if (passwordControl?.hasError('required')) {
-          <span>A password is required</span>
-          }@else if (passwordControl?.hasError('minlength')) {
-          <span>Password must have 3 characters</span>
-          }@else if (passwordControl?.hasError('maxlength')) {
-          <span>Password must have less than 20 characters</span>
-          }@else if (passwordControl?.hasError('hasUpperCase')) {
-          <span>Password must have an uppercase letter</span>
-          }@else if (passwordControl?.hasError('hasLowerCase')) {
-          <span>Password must have a lowercase letter</span>
-          }@else if (passwordControl?.hasError('hasNumber')) {
-          <span>Password must have at least 1 number</span>
-          }@else if (passwordControl?.hasError('hasSpecialCharacter')) {
-          <span>Password must have as special character</span>
-          }
-        </div>
-        } @else {
-        <div class="form-error-message">
-          <span class="form-error-message-text">Nothing wrong</span>
-        </div>
-        }
         <mat-icon
           svgIcon="info"
           class="form-info"
@@ -94,6 +71,15 @@
             "
           aria-label="Informtion about password requirements"
         ></mat-icon>
+        @if (isPasswordInvalid) {
+        <div class="form-error-message">
+          <span *ngFor="let msg of passwordErrorsList">{{ msg }}</span>
+        </div>
+        } @else {
+        <div class="form-error-message">
+          <span class="form-error-message-text">Nothing wrong</span>
+        </div>
+        }
       </div>
     </div>
     <div>

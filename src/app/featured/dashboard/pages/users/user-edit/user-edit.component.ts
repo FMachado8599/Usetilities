@@ -87,7 +87,25 @@ export class UserEditComponent  implements OnInit{
   get passwordControl(){
     return this.editUserForm.get('password');
   }
-  get isPasswordInvalid(){
-    return this.passwordControl?.touched && this.passwordControl?.errors?.['stongPassword'];
+
+  get isPasswordInvalid(): boolean {
+    console.log('touched:', this.passwordControl?.touched);
+    console.log('errors:', this.passwordErrorsList);
+    return !!(this.passwordControl?.touched && this.passwordErrorsList.length > 0);
+  }
+
+  get passwordErrorsList(): string[] {
+    const errors = this.passwordControl?.errors?.['strongPassword'];
+
+    if (!errors) return [];
+
+    const messages: string[] = [];
+
+    if (!errors.hasUpperCase) messages.push('Password must have an uppercase letter');
+    if (!errors.hasLowerCase) messages.push('Password must have a lowercase letter');
+    if (!errors.hasNumber) messages.push('Password must have at least 1 number');
+    if (!errors.hasSpecialCharacter) messages.push('Password must have a special character (!@#$%^&* etc)');
+
+    return messages;
   }
 }
