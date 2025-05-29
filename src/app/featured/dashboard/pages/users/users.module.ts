@@ -7,13 +7,15 @@ import { SharedModule } from '../../../../shared/shared.module';
 import { NewUserFormComponent } from './new-user-form/new-user-form.component';
 import { UsersRoutingModule } from './users-routing.module';
 import { UsersComponent } from './users.component';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 
 
 @NgModule({
   declarations: [
     NewUserFormComponent, 
-    UsersComponent
+    UsersComponent,
+    UserEditComponent,
   ],
   imports: [
     CommonModule,

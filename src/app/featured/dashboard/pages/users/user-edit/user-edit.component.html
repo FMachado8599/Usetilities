@@ -1,0 +1,118 @@
+<button class="edit-page-back-button" (click)="onCancelled()">↩ Users</button>
+<h2>Edit {{ user?.username || "User" }}</h2>
+<form [formGroup]="editUserForm" (ngSubmit)="submit()">
+  <div>
+    <div>
+      <mat-form-field class="form-course-name">
+        <mat-label>Username</mat-label>
+        <input
+          matInput
+          placeholder="user123"
+          type="text"
+          formControlName="username"
+        />
+      </mat-form-field>
+      @if (isUsernameInvalid) {
+      <div class="form-error-message">
+        @if (usernameControl?.hasError('required')) {
+        <span>A name is required</span>
+        }@else if (usernameControl?.hasError('minlength')) {
+        <span>Name must have 3 characters</span>
+        }@else if (usernameControl?.hasError('maxlength')) {
+        <span>Name must have less than 20 characters</span>
+        }
+      </div>
+      } @else {
+      <div class="form-error-message">
+        <span class="form-error-message-text">Nothing wrong</span>
+      </div>
+      }
+    </div>
+    <div>
+      <mat-form-field class="form-course-name">
+        <mat-label>E-mail</mat-label>
+        <input
+          matInput
+          placeholder="user123@gmail.com"
+          type="text"
+          formControlName="email"
+        />
+      </mat-form-field>
+      @if (isEmailInvalid) {
+      <div class="form-error-message">
+        @if (emailControl?.hasError('required')) {
+        <span class="form-error-message-text">An email is required</span>
+        }
+      </div>
+      } @else {
+      <div class="form-error-message">
+        <span class="form-error-message-ok">Nothing wrong</span>
+      </div>
+      }
+    </div>
+  </div>
+  <div>
+    <div>
+      <div>
+        <mat-form-field class="form-course-name">
+          <mat-label>Password</mat-label>
+          <input
+            matInput
+            placeholder="user123"
+            type="text"
+            formControlName="password"
+          />
+        </mat-form-field>
+        @if (isPasswordInvalid) {
+        <div class="form-error-message">
+          @if (passwordControl?.hasError('required')) {
+          <span>A password is required</span>
+          }@else if (passwordControl?.hasError('minlength')) {
+          <span>Password must have 3 characters</span>
+          }@else if (passwordControl?.hasError('maxlength')) {
+          <span>Password must have less than 20 characters</span>
+          }@else if (passwordControl?.hasError('hasUpperCase')) {
+          <span>Password must have an uppercase letter</span>
+          }@else if (passwordControl?.hasError('hasLowerCase')) {
+          <span>Password must have a lowercase letter</span>
+          }@else if (passwordControl?.hasError('hasNumber')) {
+          <span>Password must have at least 1 number</span>
+          }@else if (passwordControl?.hasError('hasSpecialCharacter')) {
+          <span>Password must have as special character</span>
+          }
+        </div>
+        } @else {
+        <div class="form-error-message">
+          <span class="form-error-message-text">Nothing wrong</span>
+        </div>
+        }
+        <mat-icon
+          svgIcon="info"
+          class="form-info"
+          matTooltip="
+            Debe tener al menos una mayúscula, una minúscula, un número y un carácter especial (!@#$%).
+            "
+          aria-label="Informtion about password requirements"
+        ></mat-icon>
+      </div>
+    </div>
+    <div>
+      <mat-checkbox class="checkbox" formControlName="isAdmin">
+        Es Admin
+      </mat-checkbox>
+    </div>
+  </div>
+  <div>
+    <button
+      mat-stoked-button
+      class="submit-button"
+      type="button"
+      (click)="onCancelled()"
+    >
+      Cancel
+    </button>
+    <button mat-raised-button class="submit-button" type="submit">
+      Submit
+    </button>
+  </div>
+</form>

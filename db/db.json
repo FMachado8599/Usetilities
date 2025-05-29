@@ -68,32 +68,25 @@
   ],
   "users": [
     {
-      "id": 1,
       "username": "sickzoid",
+      "password": "ElM4sKp0!",
       "email": "f.machado5899@gmail.com",
-      "password": "elmascapo",
-      "isAdmin": true
+      "isAdmin": true,
+      "id": "1"
     },
     {
-      "id": 2,
+      "id": "2",
       "username": "profe",
       "email": "profe@gmail.com",
       "password": "profe123",
       "isAdmin": true
     },
     {
-      "id": 3,
+      "id": "3",
       "username": "test",
       "password": "User123!",
       "email": "test@gmail.com",
       "isAdmin": true
-    },
-    {
-      "id": 4,
-      "username": "testdos",
-      "password": "Test2@",
-      "email": "test2@gmail.com",
-      "isAdmin": false
     }
   ]
 }

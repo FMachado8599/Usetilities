@@ -38,15 +38,19 @@
               {{ user.email }}
             </td>
             <td>
-              {{ user.isAdmin }}
+              @if(user.isAdmin) {
+              <span class="admin-role">Admin</span>
+              } @else {
+              <span class="user-role">User</span>
+              }
             </td>
             <td>
-              <img
+              <mat-icon
                 class="entity-edit"
-                src="/assets/png/edit_white.png"
-                alt="Edit"
+                svgIcon="edit"
+                [routerLink]="[user.id]"
                 aria-label="Edit user"
-              />
+              ></mat-icon>
             </td>
             <td>
               <shared-confirm-dialog-button

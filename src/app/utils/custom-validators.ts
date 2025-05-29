@@ -8,8 +8,8 @@ export class CustomValidators {
     }
 
     static strongPassword(control: AbstractControl): ValidationErrors | null {
+        
         const value = control.value ? control.value.toString() : '';
-
         const hasUpperCase = /[A-Z]/.test(value);
         const hasLowerCase = /[a-z]/.test(value);
         const hasNumber = /\d/.test(value);
