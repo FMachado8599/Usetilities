@@ -55,7 +55,7 @@
       "lastName": "Machadito",
       "ci": 50041545,
       "location": "Ayuntamiento",
-      "birth": "1999-04-30",
+      "birth": "1999-04-29",
       "presenteeism": 100,
       "bio": "Alo esto es una prueba para ver si se guarda la bio gracias y hasta luego",
       "online": true,
@@ -70,10 +70,11 @@
       "lastName": "Hidleston",
       "ci": 11122334,
       "location": "New York, New, York, USA",
-      "birth": "2025-05-01",
+      "birth": "2025-04-26",
+      "online": false,
       "courses": [
         "2",
-        "3"
+        "4"
       ],
       "id": "1967"
     }

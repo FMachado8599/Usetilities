@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { EventEmitter } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Student } from '../../../../../core/interfaces/students-interface';
 import { StudentsService } from '../../../../../core/services/students.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { CoursesService } from '../../../../../core/services/courses.service';
 import { Course } from '../../../../../core/interfaces/courses-interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'dashboard-student-edit',
@@ -14,11 +16,14 @@ import { Course } from '../../../../../core/interfaces/courses-interface';
 })
 export class StudentEditComponent implements OnInit {
 
+    @Output() cancelled = new EventEmitter<void>();
+
     constructor(
     private route: ActivatedRoute,
     private fb: FormBuilder,
     private studentsService: StudentsService,
     private coursesService: CoursesService,
+    private router: Router,
   ) {}
 
   student: Student | null = null;
@@ -95,7 +100,7 @@ export class StudentEditComponent implements OnInit {
     return `${year}-${month}-${day}`;
   }
 
-    onSubmit() {
+  onSubmit() {
     if (this.studentForm.valid) {
       const updatedStudent: Student = {
         ...this.studentForm.value,
@@ -103,10 +108,18 @@ export class StudentEditComponent implements OnInit {
       };
 
       this.studentsService.updateStudent(updatedStudent).subscribe(() => {
-        console.log('Estudiante actualizado correctamente');
       });
+
+      this.router.navigate(['/dashboard/students'])
+
     } else {
       this.studentForm.markAllAsTouched();
     }
+  }
+
+  onCancelled(){
+    this.studentForm.reset();
+    this.cancelled.emit();
+    this.router.navigate(['/dashboard/students'])
   }
 }

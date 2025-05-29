@@ -8,6 +8,7 @@ import { StudentsActions } from './store/student.actions';
 import { Student } from '../../../../core/interfaces/students-interface';
 import { Course } from '../../../../core/interfaces/courses-interface';
 import { CoursesService } from '../../../../core/services/courses.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -31,7 +32,8 @@ export class StudentsComponent implements OnInit {
 
   constructor(
     private store: Store,
-    private coursesService: CoursesService
+    private coursesService: CoursesService,
+    private router: Router,
   ) {
     this.students$ = this.store.select(selectStudents);
     this.loading$ = this.store.select(selectStudentsLoading);
@@ -89,6 +91,7 @@ export class StudentsComponent implements OnInit {
   }
   onCancelled(){
     this.showForm = false;
+    this.router.navigate(['/dashboard/students'])
   }
 
 }

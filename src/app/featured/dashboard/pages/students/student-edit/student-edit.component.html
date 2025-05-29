@@ -1,5 +1,8 @@
 <section>
-  <h2>student.name</h2>
+  <button class="edit-page-back-button" (click)="onCancelled()">
+    ↩ Students
+  </button>
+  <h2>{{ student?.name + " " + student?.lastName }}</h2>
   <form
     [formGroup]="studentForm"
     (ngSubmit)="onSubmit()"
@@ -68,6 +71,14 @@
     <br />
     <mat-checkbox formControlName="online">Está en línea</mat-checkbox>
     <br />
+    <button
+      mat-flat-button
+      color="secondary"
+      type="button"
+      (click)="onCancelled()"
+    >
+      Cancelar
+    </button>
     <button
       mat-flat-button
       color="primary"
