@@ -9,6 +9,8 @@ import { SharedModule } from './shared/shared.module';
 import { DashboardModule } from './featured/dashboard/dashboard.module';
 import { AuthModule } from './featured/auth/auth.module';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
     SharedModule,
     DashboardModule,
     AuthModule,
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]),
   ],
   providers: [provideHttpClient(withFetch())],
   bootstrap: [AppComponent]

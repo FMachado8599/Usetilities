@@ -30,7 +30,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let student of students">
+          <tr *ngFor="let student of students$ | async">
             <th scope="row">
               <div class="d-flex flex-row gap-3">
                 <mat-icon svgIcon="avatar" class="student-img"></mat-icon>

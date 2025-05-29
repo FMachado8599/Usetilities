@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+
+import { Store } from '@ngrx/store';
+import { selectStudents, selectStudentsLoading, selectStudentsError } from './store/student.selectors';
+import { StudentsActions } from './store/student.actions';
+
 import { Student } from '../../../../core/interfaces/students-interface';
 import { Course } from '../../../../core/interfaces/courses-interface';
-import { StudentsService } from '../../../../core/services/students.service';
 import { CoursesService } from '../../../../core/services/courses.service';
 
 
@@ -14,31 +19,40 @@ import { CoursesService } from '../../../../core/services/courses.service';
 
 export class StudentsComponent implements OnInit {
 
-  constructor(private studentsService: StudentsService, private coursesService: CoursesService) {}
- 
   avatarPlaceholder: string = "/assets/png/avatar_placeholder_white.png";
 
-  public students: Student[] = []
+  students$: Observable<Student[]>;
+  loading$: Observable<boolean>;
+  error$: Observable<string | null>;
+
+  showForm: boolean = false;
+  public students: Student[] = [];
   public courses: Course[] = [];
 
-  loadStudents() {
-    this.studentsService.getStudents().subscribe((data: Student[]) => {
-      this.students = data;
-    });
+  constructor(
+    private store: Store,
+    private coursesService: CoursesService
+  ) {
+    this.students$ = this.store.select(selectStudents);
+    this.loading$ = this.store.select(selectStudentsLoading);
+    this.error$ = this.store.select(selectStudentsError);
   }
 
   ngOnInit(): void {
-    this.loadStudents();
+    this.store.dispatch(StudentsActions.loadStudents());
 
     this.coursesService.getCourses().subscribe((courses: Course[]) => {
       this.courses = courses;
     });
   }
 
+
+  loadStudents() {
+    this.store.dispatch(StudentsActions.loadStudents());
+  }
+
   deleteStudent(id: string) {
-    this.studentsService.deleteStudent(id).subscribe(() => {
-      this.students = this.students.filter(student => student.id !== id);
-    });
+    this.store.dispatch(StudentsActions.deleteStudent({ id }));
   }
 
   getStudentCoursesNames(student: Student): string {
@@ -63,7 +77,6 @@ export class StudentsComponent implements OnInit {
 
 
   // SHOW-HIDE Form------------------------//
-  showForm: boolean = false;
 
   onAddStudent() {
     this.showForm = true;

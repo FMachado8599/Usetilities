@@ -8,6 +8,11 @@ import { NewStudentFormComponent } from './new-student-form/new-student-form.com
 import { SharedModule } from '../../../../shared/shared.module';
 import { StudentEditComponent } from './student-edit/student-edit.component';
 
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { studentsReducer } from './store/student.reducer';
+import { StudentsEffects } from './store/student.effects';
+
 @NgModule({
   declarations: [
     StudentsComponent,
@@ -18,6 +23,8 @@ import { StudentEditComponent } from './student-edit/student-edit.component';
     CommonModule,
     SharedModule,
     StudentsRoutingModule,
+    StoreModule.forFeature('students', studentsReducer),
+    EffectsModule.forFeature([StudentsEffects]),
   ],
   providers: [
     StudentsService,
