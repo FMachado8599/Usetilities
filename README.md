@@ -2,7 +2,7 @@
 
 # 📚 Angular Student Management App
 
-Esta es una aplicación web construida con **Angular** que permite la gestión de estudiantes, cursos y usuarios. Incluye funcionalidades de autenticación, edición, eliminación y asignación de cursos, todo utilizando el patrón de estado global **NgRx**.
+Esta es una aplicación web construida con **Angular** que permite la gestión de estudiantes, cursos y usuarios. Incluye funcionalidades de autenticación, edición, eliminación y asignación de cursos, todo utilizando el patrón de estado global (o servicios en algunos casos, por ahora) **NgRx**.
 
 ---
 
